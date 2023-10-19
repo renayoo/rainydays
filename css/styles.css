@@ -1,34 +1,140 @@
+:root {
+    --primary-blue: rgb(19, 44, 119);
+}
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+}
 header {
     background-color: #ffffff; 
     color: #000000; 
     padding: 10px; 
     display: flex;
     align-items: center; 
+    justify-content: space-between;
+    height: 120px;
+    padding: 0 50px;
 }
-.logo {
-    margin-right: 100px;
+
+.banner-logo {
 }
-.logo img {
-    max-width: 170px; 
+
+.banner-logo img {
+    width: 200px; 
+    height: 180px;
+    padding: 50px 0;
+    object-fit: contain;
 }
-.navlist-horizontal {
+nav {
+    height: 100%;
+}
+
+.nav-buttons {
     font-family: Arial, Helvetica, sans-serif;
     list-style-type: none; 
     margin: 10;
     padding: 0;
     display: flex; 
+    height: 100%;
 }
-.navlist-horizontal li {
-    margin-right: 100px; 
+.nav-buttons a {
+    height: 100%;
+    min-width: 150px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--primary-blue);
+
 }
-.navlist-horizontal a {
+.nav-buttons a:hover {
+    background-color: rgb(199, 199, 199);
+    color: white;
+}
+.shopping-cart a {
     text-decoration: line;
     font-size: large;
     color: #000000; 
+    height: 30px;
 }
-.navlist-horizontal img {
+.shopping-cart img {
     max-width: 38px;
     max-height: 42px;
     padding: 1px;
-    margin-left: 600px;
+}
+
+.banner-wrapper {
+    overflow: hidden;
+    height: 500px;
+    width: 100%;
+    background-color: var(--primary-blue);
+    display: flex;
+}
+.banner-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    color: white;
+    padding: 30px 50px;
+    height: 100%;
+}
+.banner-text-wrapper {
+    
+}
+.banner-buttons {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 75px;
+}
+.banner-button {
+    padding: 10px 30px;
+    color: white;
+    border: white solid 3px;
+    background-color: var(--primary-blue);
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 18px;
+    min-width: 200px
+}
+.banner-button:hover {
+    background-color: white;
+    color: var(--primary-blue);
+}
+    
+
+
+.banner-image-wrapper {
+    position: relative;
+    width: 100%;
+
+}
+.banner-wrapper img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+}
+.banner-triangle {
+    background-color: var(--primary-blue);
+    width: 150px;
+    height: 100%;
+    position: absolute;
+    clip-path: polygon(0 0, 0 100%, 100% 0, 100% 0);
+}
+
+.banner-buttons {
+
+}
+
+@media (max-width: 768px) {
+    header {
+        padding: 0;
+    }
 }
