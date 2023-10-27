@@ -19,7 +19,6 @@ header {
     height: 120px;
     padding: 0 50px;
 }
-
 .banner-logo {
 }
 
@@ -52,7 +51,6 @@ nav {
     text-decoration: none;
     font-weight: bold;
     color: var(--primary-blue);
-
 }
 .nav-buttons a:hover {
     background-color: rgb(199, 199, 199);
@@ -69,7 +67,9 @@ nav {
     max-height: 42px;
     padding: 1px;
 }
-
+.banner-product-content h1 {
+    text-align: center;
+}
 .headline-products {
     text-align: center;
     background-color: var(--grey-background);
@@ -79,10 +79,12 @@ nav {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
+    padding: 20px;
 }
 .product-list {
     display: flex;
     flex-direction: row;
+    justify-self: space-between;
     gap: 20px;
 }
 .products {
@@ -90,12 +92,21 @@ nav {
     border: 1px solid #ffffff;
     padding: 20px;
     text-align: center;
-    text-transform: uppercase;
-    
+    text-transform: uppercase;   
+}
+.product-banner-img {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
 }
 .products img {
     max-width: 100%;
-
+    height: auto;
+    object-fit: cover;
 }
 .price {
     font-weight: bold;
@@ -108,4 +119,8 @@ nav {
 .products size-buttons {
     font-family: Arial, Helvetica, sans-serif;
     display: flex;
+
+}
+.size-buttons a {
+    text-decoration: none;
 }
