@@ -69,3 +69,59 @@ nav {
     max-height: 42px;
     padding: 1px;
 }
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: url('https://cdn.pixabay.com/photo/2016/11/22/19/30/adventure-1850213_1280.jpg'); /* Set the background image */
+    background-size: cover;
+    text-transform: uppercase;
+}
+
+.contact-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.contact-form {
+    background: var(--grey-background);
+    opacity: 0.9;
+    padding: 90px;
+    border-radius: 30px;
+    text-align: center;
+}
+
+.contact-form h2 {
+    margin: 0;
+}
+
+.form-group {
+    margin: 15px 0;
+    text-align: center;
+}
+
+label {
+    display: block;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
