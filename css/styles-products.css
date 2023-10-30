@@ -67,6 +67,12 @@ nav {
     max-height: 42px;
     padding: 1px;
 }
+.banner-product-content {
+    width: 100%;
+}
+.banner-product-img {
+    width: 100%;
+}
 .banner-product-content h1 {
     text-align: center;
 }
@@ -83,13 +89,13 @@ nav {
 }
 .product-list {
     display: flex;
-    flex-direction: row;
-    justify-self: space-between;
+    flex-direction: wrap;
+    justify-content: space-between;
     gap: 20px;
 }
 .products {
     background-color: var(--grey-background);
-    border: 1px solid #ffffff;
+    border: 1px solid #7a1515;
     padding: 20px;
     text-align: center;
     text-transform: uppercase;   
@@ -114,7 +120,7 @@ nav {
 }
 .products p {
     text-transform: uppercase;
-    color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
 }
 .products size-buttons {
     font-family: Arial, Helvetica, sans-serif;
@@ -123,4 +129,103 @@ nav {
 }
 .size-buttons a {
     text-decoration: none;
+}
+.jacket1 a {
+    text-decoration: none;
+    color: black;
+}
+.burger-menu-image {
+    height: 50px;
+}
+
+#burger-menu-input {
+    opacity: 0;
+    position: absolute;
+  }
+  
+  .burger-menu-label {
+    display: none; 
+    align-items: center;  
+    height: 100%;
+    cursor: pointer;
+  }
+  
+ 
+  .burger-menu-button {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    padding-right : 20px;
+  }
+
+  .burger-menu-box {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 20px 0;
+    background-color: #dfdfdf;
+    box-shadow: 0px 0px 100px rgba(0, 0, 0, .6);
+    transition: 0.2s;
+  }
+  
+  .burger-menu-box ul {
+    list-style: none;
+  }
+  
+  .burger-menu-item {
+    display: block;
+    padding: 12px 24px;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+  .burger-menu-item:hover {
+    background-color: #CFD8DC;
+  }
+  
+  
+  #burger-menu-input:checked ~ .burger-menu-box {
+    visibility: visible;
+    left: 0;
+  }
+footer {
+    background-color: var(--primary-blue);
+    color: #664040;
+    padding: 20px 0;
+    text-align: center;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 5px;
+    text-transform: uppercase;
+}
+
+footer a:hover {
+    text-decoration: none;
+    background-color: white;
+    color: black;
+    padding: 5px;
+    text-transform: uppercase;
+    height: 100%;
+}
+
+@media (max-width: 900px) {
+    .burger-menu-label {
+        display: flex;
+}
+.nav-buttons-main {
+    display: none;
 }

@@ -69,56 +69,18 @@ nav {
     max-height: 42px;
     padding: 1px;
 }
-.container {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
-    max-width: 100%x;
-    padding: 20px;
-    border: 1px solid #ffffff;
-    background-color: var(--primary-blue);
+.container-thanksorder {
+    flex-direction: column;
+    background-color: #ffffff;
+    text-align: center;
+    padding: 300px;
 }
-.product-details {
-    flex: 1;
+.container-thanksorder p {
+    color: var(--primary-blue);
+}
+.container-thanksorder img {
+    max-width: 100px;
     padding: 10px;
-    color: white;
-}
-.checkout-form {
-    flex: 1;
-    color: white;
-}
-.product-image {
-    max-width: 500px;
-    display: flex;
-}
-form {
-    margin-top: 20px;
-    align-items: center;
-    text-transform: uppercase;
-
-}
-label, input {
-    display: block;
-    width: 100px;
-    margin-bottom: 30px;
-}
-input[type="text"], input[type="number"], input[type="email"] {
-    width: 500px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-.placeorder {
-    color: rgb(255, 255, 255);
-    background-color: #8563ff;
-    padding: 20px 50px;
-    border-radius: 2px;
-    border: none;
-    text-transform: uppercase;
-}
-.placeorder button:hover {
-    background-color: #000000;
-    color: #ffffff;
 }
 footer {
     background-color: var(--primary-blue);
@@ -127,6 +89,7 @@ footer {
     text-align: center;
     justify-content: space-between;
     font-weight: bold;
+    width: 100%;
 }
 
 footer a {

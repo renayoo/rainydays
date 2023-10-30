@@ -6,8 +6,18 @@
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
 }
+
+main {
+    height: 100%;
+}
+
+main {
+    height: 100%;
+}
 body {
     margin: 0;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
 }
 header {
     background-color: #ffffff; 
@@ -35,7 +45,7 @@ nav {
 .nav-buttons {
     font-family: Arial, Helvetica, sans-serif;
     list-style-type: none; 
-    margin: 10;
+    margin: 0;
     padding: 0;
     display: flex; 
     height: 100%;
@@ -126,21 +136,170 @@ nav {
 .banner-buttons {
 }
 
-@media (max-width: 768px) {
-    header 
-        padding: 0;
-} -this is for devices
 
+.second-banner-text {
+    padding: 50px;
+}
 
+.two-skiers-img {
+    width: 40%;
+    object-fit: cover;
+}
 
+.second-text-wrapper {
+    display: flex;
+    text-align: left;
+}
+.second-banner {
+    background-color: #ffffff;
+}
 .second-banner-content { 
+    display: flex;
+    background-color: #d7d7d7;
 }
 .second-banner-content h2 {
+    text-align: center;
 }
-.secont-banner-content img {
+.second-banner-content img {
+}
+.second-banner-content p {
+    padding: 100px;
+    font-size: 24px;
+    font-weight: 100;
+    display: flex;
+}
+
+.last-banner {
+    display: flex;
+}
+.browse-products-link {
+    display: flex;
+    width: 40%;
+    background-color: red;
+}
+.browse-products-link img {
+}
+.browse-products {
+    background-color: #000000;
+}
+.mountain-image {
+    object-fit: cover;
 }
 
 
+footer {
+    background-color: var(--primary-blue);
+    color: #664040;
+    padding: 20px 0;
+    text-align: center;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 5px;
+    text-transform: uppercase;
+}
+
+footer a:hover {
+    text-decoration: none;
+    background-color: white;
+    color: black;
+    padding: 5px;
+    text-transform: uppercase;
+    height: 100%;
+}
+
+.burger-menu-image {
+    height: 50px;
+}
+
+#burger-menu-input {
+    opacity: 0;
+    position: absolute;
+  }
+  
+  .burger-menu-label {
+    display: none; 
+    align-items: center;  
+    height: 100%;
+    cursor: pointer;
+  }
+  
+ 
+  .burger-menu-button {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    padding-right : 20px;
+  }
+
+  .burger-menu-box {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 20px 0;
+    background-color: #dfdfdf;
+    box-shadow: 0px 0px 100px rgba(0, 0, 0, .6);
+    transition: 0.2s;
+  }
+  
+  .burger-menu-box ul {
+    list-style: none;
+  }
+  
+  .burger-menu-item {
+    display: block;
+    padding: 12px 24px;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s;
+  }
+  .burger-menu-item:hover {
+    background-color: #CFD8DC;
+  }
+  
+  
+  #burger-menu-input:checked ~ .burger-menu-box {
+    visibility: visible;
+    left: 0;
+  }
 
 
-    
+@media (max-width: 900px) {
+    .burger-menu-label {
+        display: flex;
+    }
+    .second-banner-content { 
+        flex-direction: column;
+    }
+    .two-skiers-img {
+        width: 100%;
+    }
+    .nav-buttons-main {
+        display: none;
+    }
+
+    .second-banner-content p {
+        padding: 20px 30px;
+    }
+    .second-banner-text {
+        padding: 20px 0;
+    }
+    .banner-buttons {
+        margin-top: 30px;
+        flex-direction: column;
+    }
+
+}

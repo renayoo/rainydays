@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="css/styles-contact.css" rel="stylesheet" />
+    <link href="css/styles-emptycart.css" rel="stylesheet" />
     <meta
       name="description"
       content="This is an outerwear web shop called Rainy days."
@@ -14,7 +14,7 @@
     />
     <title>Rainy Days</title>
   </head>
-
+  <main>
   <body>
     <header>
       <a class="banner-logo" href="rainydays.html">
@@ -31,30 +31,13 @@
         ><img src="cart.png" alt="cart"
       /></a>
     </header>
-    <main>
-      <div class="contact-form-container">
-        <div class="contact-form">
-            <h2>Got a question? Ask us!</h2>
-              <p>We'd love to hear from you. Send us a message and we will respond as soon as possible.</p>
-            <form>
-                <div class="form-group">
-                    <label for="name">Name*:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">E-mail*:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message*:</label>
-                    <textarea id="message" name="message" rows="4" required></textarea>
-                </div>
-                <div class="form-group">
-                    <button type="submit">Send message</button>
-                </div>
-            </form>
+        <div class="container">
+            <div class="cart-icon">
+                &#128722; 
+            </div>
+            <p class="empty-cart-message">Your cart is empty.</p>
+            <p><a class="empty-cart-link" href="outerwearproducts.html">our Products</a></p>
         </div>
-    </div>
     </main>
     <footer>
       <a href="#faq">FAQ</a>

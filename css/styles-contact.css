@@ -32,7 +32,6 @@ header {
 nav {
     height: 100%;
 }
-
 .nav-buttons {
     font-family: Arial, Helvetica, sans-serif;
     list-style-type: none; 
@@ -73,7 +72,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, Helvetica, sans-serif;
-    background-image: url('https://cdn.pixabay.com/photo/2016/11/22/19/30/adventure-1850213_1280.jpg'); /* Set the background image */
+    background-image: url('https://cdn.pixabay.com/photo/2016/11/22/19/30/adventure-1850213_1280.jpg');
     background-size: cover;
     text-transform: uppercase;
 }
@@ -83,6 +82,7 @@ body {
     justify-content: center;
     align-items: center;
     height: 100vh;
+    border: 1px solid #ffffff;
 }
 
 .contact-form {
@@ -114,7 +114,8 @@ input, textarea {
 }
 
 button {
-    background-color: #007bff;
+    background-color: var(--primary-blue);
+    text-transform: uppercase;
     color: #fff;
     padding: 10px 20px;
     border: none;
@@ -123,5 +124,32 @@ button {
 }
 
 button:hover {
-    background-color: #0056b3;
+    background-color: #ffffff;
+    color:#000000 
+}
+
+footer {
+    background-color: var(--primary-blue);
+    color: #664040;
+    padding: 20px 0;
+    text-align: center;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 5px;
+    text-transform: uppercase;
+}
+
+footer a:hover {
+    text-decoration: none;
+    background-color: white;
+    color: black;
+    padding: 5px;
+    text-transform: uppercase;
+    height: 100%;
 }

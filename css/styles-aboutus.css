@@ -101,3 +101,28 @@ h2 {
     text-transform: uppercase;
     margin-top: 0;
 }
+footer {
+    background-color: var(--primary-blue);
+    color: #664040;
+    padding: 20px 0;
+    text-align: center;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+footer a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 10px;
+    padding: 5px;
+    text-transform: uppercase;
+}
+
+footer a:hover {
+    text-decoration: none;
+    background-color: white;
+    color: black;
+    padding: 5px;
+    text-transform: uppercase;
+    height: 100%;
+}

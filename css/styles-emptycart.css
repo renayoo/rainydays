@@ -69,57 +69,35 @@ nav {
     max-height: 42px;
     padding: 1px;
 }
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
 .container {
-    display: flex;
-    justify-content: space-between;
+    max-width: 100%;
     margin: 0 auto;
-    max-width: 100%x;
     padding: 20px;
-    border: 1px solid #ffffff;
-    background-color: var(--primary-blue);
-}
-.product-details {
-    flex: 1;
-    padding: 10px;
-    color: white;
-}
-.checkout-form {
-    flex: 1;
-    color: white;
-}
-.product-image {
-    max-width: 500px;
-    display: flex;
-}
-form {
-    margin-top: 20px;
+    background-color: #ffffff;
+    text-align: center;
     align-items: center;
+}
+.cart-icon {
+    font-size: 48px;
+    color: #ccc;
+}
+.empty-cart-message {
+    font-size: 24px;
+    color: var(--primary-blue);
+}
+.empty-cart-link {
+    text-decoration: underline;
     text-transform: uppercase;
+    color: var(--primary-blue)
+}
+.logo-cart {
+    max-width: 100px;
+}
 
-}
-label, input {
-    display: block;
-    width: 100px;
-    margin-bottom: 30px;
-}
-input[type="text"], input[type="number"], input[type="email"] {
-    width: 500px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-.placeorder {
-    color: rgb(255, 255, 255);
-    background-color: #8563ff;
-    padding: 20px 50px;
-    border-radius: 2px;
-    border: none;
-    text-transform: uppercase;
-}
-.placeorder button:hover {
-    background-color: #000000;
-    color: #ffffff;
-}
 footer {
     background-color: var(--primary-blue);
     color: #664040;
