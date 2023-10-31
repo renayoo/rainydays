@@ -243,56 +243,64 @@ footer a:hover {
 
 @media (max-width: 900px) {
     .burger-menu-label {
-    display: flex;
-}
-.nav-buttons-main {
-    display: none;
-}
-.product-list {
-    display: flex;
-    flex-direction: wrap;
-    justify-content: space-between;
-    gap: 20px;
-}
-.products {
-    background-color: var(--grey-background);
-    border: 1px solid #7a1515;
-    padding: 20px;
-    text-align: center;
-    text-transform: uppercase;   
-}
-.product-banner-img {
-    width: 100%;
-    max-width: 100%;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-.products img {
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
-}
-.price {
-    font-weight: bold;
-    color: #000000;
-    font-size: ;
-}
-.products p {
-    text-transform: uppercase;
-    color: rgb(0, 0, 0);
-}
-.products size-buttons {
-    font-family: Arial, Helvetica, sans-serif;
-    display: flex;
-
-}
-.size-buttons a {
-    text-decoration: none;
-}
-.jacket1 a {
-    text-decoration: none;
-    color: black;
+        display: flex;
+    }
+    
+    .nav-buttons-main {
+        display: none;
+    }
+    
+    .product-list {
+        display: flex;
+        flex-direction: wrap;
+        justify-content: space-between;
+        gap: 20px;
+    }
+    
+    .products {
+        background-color: var(--grey-background);
+        border: 1px solid #7a1515;
+        padding: 20px;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    
+    .product-banner-img {
+        width: 100%;
+        max-width: 100%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .products img {
+        max-width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+    
+    .price {
+        font-weight: bold;
+        color: #000000;
+    }
+    
+    .products p {
+        text-transform: uppercase;
+        color: rgb(0, 0, 0);
+    }
+    
+    .products .size-buttons {
+        font-family: Arial, Helvetica, sans-serif;
+        display: flex;
+    }
+    
+    .size-buttons a {
+        text-decoration: none;
+    }
+    
+    .jacket1 a {
+        text-decoration: none;
+        color: black;
+    }
 }

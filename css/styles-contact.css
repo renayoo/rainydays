@@ -138,6 +138,7 @@ nav {
     left: 0;
 }
 
+
 .contact-form-container {
     background-image: url('https://cdn.pixabay.com/photo/2016/11/22/19/30/adventure-1850213_1280.jpg');
     background-size: cover;
@@ -227,3 +228,8 @@ footer a:hover {
     .nav-buttons-main {
         display: none;
     }
+    
+    .about-content {
+        font-size: 18px;
+    }
+}

@@ -158,7 +158,6 @@ nav {
 .content p {
     line-height: 25px;
     color: white;
-
 }
 h1 {
     text-transform: uppercase;
@@ -190,7 +189,7 @@ footer a:hover {
     text-decoration: none;
     background-color: white;
     color: black;
-    padding: 5px;
+    padding: 10px;
     text-transform: uppercase;
     height: 100%;
 }
@@ -204,6 +203,8 @@ footer a:hover {
     .nav-buttons-main {
         display: none;
     }
+    
     .about-content {
         font-size: 18px;
     }
+}

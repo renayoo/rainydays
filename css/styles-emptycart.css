@@ -201,3 +201,8 @@ footer a:hover {
     .nav-buttons-main {
         display: none;
     }
+    
+    .about-content {
+        font-size: 18px;
+    }
+}
