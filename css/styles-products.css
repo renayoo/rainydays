@@ -6,8 +6,15 @@
     font-family: Arial, Helvetica, sans-serif;
     box-sizing: border-box;
 }
+
+main {
+    height: 100%;
+}
+
 body {
     margin: 0;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
 }
 header {
     background-color: #ffffff; 
@@ -19,8 +26,7 @@ header {
     height: 120px;
     padding: 0 50px;
 }
-.banner-logo {
-}
+
 
 .banner-logo img {
     width: 200px; 
@@ -28,14 +34,14 @@ header {
     padding: 50px 0;
     object-fit: contain;
 }
+
 nav {
     height: 100%;
 }
-
 .nav-buttons {
     font-family: Arial, Helvetica, sans-serif;
     list-style-type: none; 
-    margin: 10;
+    margin: 0;
     padding: 0;
     display: flex; 
     height: 100%;
@@ -56,6 +62,7 @@ nav {
     background-color: rgb(199, 199, 199);
     color: white;
 }
+
 .shopping-cart a {
     text-decoration: none;
     font-size: large;
@@ -67,60 +74,7 @@ nav {
     max-height: 42px;
     padding: 1px;
 }
-.banner-product-content {
-    width: 100%;
-    height: auto;
-}
-.banner-product-img {
-    width: 100%;
-    object-fit: cover;
-    position: relative;
-}
-.banner-product-content h1 {
-    display: block;
-    position: absolute;
-    color: orange;
-    padding: 30px;
-    font-size: 50px;
-    font-weight: 100;
-    object-fit: contain;
-    overflow: hidden;
-}
-.headline-products {
-    text-align: center;
-    background-color: var(--grey-background);
-    padding: 20px;
-}
-.product-grid {
 
-}
-.product-list {
-    display: flex;
-    flex-direction: wrap;
-    justify-content: space-between;
-    gap: 20px;
-}
-.products {
-    background-color: var(--grey-background);
-    border: 1px solid #7a1515;
-    padding: 20px;
-    text-align: center;
-    text-transform: uppercase;   
-}
-.product-banner-img {
-    width: 100%;
-    max-width: 100%;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-}
-.products img {
-    max-width: 100%;
-    height: auto;
-    object-fit: cover;
-}
 .burger-menu-image {
     height: 50px;
 }
@@ -184,6 +138,62 @@ nav {
     visibility: visible;
     left: 0;
 }
+
+.banner-product-content {
+    width: 100%;
+    height: auto;
+}
+.banner-product-img {
+    width: 100%;
+    object-fit: cover;
+    position: relative;
+}
+.banner-product-content h1 {
+    display: block;
+    position: absolute;
+    color: orange;
+    padding: 30px;
+    font-size: 50px;
+    font-weight: 100;
+    object-fit: contain;
+    overflow: hidden;
+}
+
+.headline-products {
+    text-align: center;
+    background-color: var(--grey-background);
+    padding: 20px;
+}
+.product-grid {
+}
+.product-list {
+    display: flex;
+    flex-direction: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+.products {
+    background-color: var(--grey-background);
+    border: 1px solid #7a1515;
+    padding: 20px;
+    text-align: center;
+    text-transform: uppercase;   
+}
+.product-banner-img {
+    width: 100%;
+    max-width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+.products img {
+    max-width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
 .price {
     font-weight: bold;
     color: #000000;
