@@ -8,6 +8,7 @@
 }
 body {
     margin: 0;
+    background-color: #f0f0f0;
 }
 header {
     background-color: #ffffff; 
@@ -18,9 +19,6 @@ header {
     justify-content: space-between;
     height: 120px;
     padding: 0 50px;
-}
-
-.banner-logo {
 }
 
 .banner-logo img {
@@ -69,22 +67,86 @@ nav {
     max-height: 42px;
     padding: 1px;
 }
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
+
+.burger-menu-image {
+    height: 50px;
+}
+
+#burger-menu-input {
+    opacity: 0;
+    position: absolute;
+}
+
+.burger-menu-label {
+    display: none; 
+    align-items: center;  
+    height: 100%;
+    cursor: pointer;
+}
+
+
+.burger-menu-button {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    padding-right : 20px;
+}
+
+.burger-menu-box {
+    display: block;
+    position: fixed;
+    visibility: hidden;
+    top: 0;
+    left: -100%;
+    width: 300px;
+    height: 100%;
+    margin: 0;
+    padding: 20px 0;
+    background-color: #dfdfdf;
+    box-shadow: 0px 0px 100px rgba(0, 0, 0, .6);
+    transition: 0.2s;
+}
+
+.burger-menu-box ul {
+    list-style: none;
+}
+
+.burger-menu-item {
+    display: block;
+    padding: 12px 24px;
+    color: #333;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background 0.3s;
+}
+
+.burger-menu-item:hover {
+    background-color: #CFD8DC;
+}
+
+#burger-menu-input:checked ~ .burger-menu-box {
+    visibility: visible;
+    left: 0;
+}
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+}
+.separating-line {
+    border-top: 1px solid black;
 }
 .container {
     max-width: 100%;
     margin: 0 auto;
     padding: 20px;
+    padding-top: 300px;
     background-color: #ffffff;
     text-align: center;
-    align-items: center;
+    height: 100vh;
 }
-.cart-icon {
-    font-size: 48px;
-    color: #ccc;
-}
+
 .empty-cart-message {
     font-size: 24px;
     color: var(--primary-blue);
@@ -123,3 +185,12 @@ footer a:hover {
     text-transform: uppercase;
     height: 100%;
 }
+
+@media (max-width: 900px) {
+    .burger-menu-label {
+        display: flex;
+    }
+
+    .nav-buttons-main {
+        display: none;
+    }

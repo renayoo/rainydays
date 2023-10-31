@@ -17,17 +17,49 @@
 
   <body>
     <header>
+      <!-- BURGER MENU -->
+      <input id="burger-menu-input" type="checkbox" />
+      <label class="burger-menu-label" for="burger-menu-input">
+        <img
+          class="burger-menu-image"
+          src="Hamburger_icon.png"
+          alt="hamburger menu"
+        />
+      </label>
+      <!-- BURGER MENU DROPDOWN -->
+      <div class="burger-menu-box">
+        <div class="burger-menu-button">
+          <label for="burger-menu-input">
+            <img
+            class="burger-menu-image"
+            src="https://w7.pngwing.com/pngs/1008/558/png-transparent-computer-icons-button-close-angle-rectangle-logo.png"
+            alt="hamburger menu"
+            />
+          </label>
+        </div>
+        <ul>
+          <li><a class="burger-menu-item" href="rainydays.html">Home</a></li>
+          <li><a class="burger-menu-item" href="outerwearproducts.html">Products</a></li>
+          <li><a class="burger-menu-item" href="aboutus.html">About us</a></li>
+          <li><a class="burger-menu-item" href="contactus.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- LOGO -->
       <a class="banner-logo" href="rainydays.html">
         <img src="RainyDays_Logo.png" alt="Rainy Days logo" />
       </a>
-      <nav class="nav-buttons">
-          <a href="rainydays.html">Home</a>
-          <a href="outerwearproducts.html">Products</a>
-          <a href="aboutus.html">About Us</a>
-          <a href="contactus.html">Contact</a>
+
+      <!-- NAV BAR ITEMS -->
+      <nav class="nav-buttons-main">
+        <ul class="nav-buttons">
+          <li><a href="rainydays.html">Home</a></li>
+          <li><a href="outerwearproducts.html">Products</a></li>
+          <li><a href="aboutus.html">About Us</a></li>
+          <li><a href="contactus.html">Contact</a></li>
         </ul>
       </nav>
-      <a class="shopping-cart" href="cart.html"
+      <a class="shopping-cart" href="emptycart.html"
         ><img src="cart.png" alt="cart"
       /></a>
     </header>
