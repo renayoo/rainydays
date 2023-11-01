@@ -223,7 +223,6 @@ footer a:hover {
 @media (max-width: 900px) {
     .burger-menu-label {
         display: flex;
-        padding-top: 25px;
     }
 
     .nav-buttons-main {
