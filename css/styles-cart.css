@@ -196,6 +196,7 @@ footer {
     text-align: center;
     justify-content: space-between;
     font-weight: bold;
+        margin-bottom: 50px;
 }
 
 footer a {
@@ -219,6 +220,7 @@ footer a:hover {
 @media (max-width: 900px) {
     .burger-menu-label {
         display: flex;
+        padding-top: 30px;
     }
 
     .nav-buttons-main {

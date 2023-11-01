@@ -260,7 +260,7 @@ footer a:hover {
     
     .products {
         background-color: var(--grey-background);
-        border: 1px solid #7a1515;
+        border: 1px solid #000000;
         padding: 20px;
         text-align: center;
         text-transform: uppercase;
