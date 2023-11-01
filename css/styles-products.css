@@ -224,11 +224,7 @@ nav {
 }
 .jacket2 {
     border: 2px solid rgb(0, 0, 0);
-                                                                                                                                                                                <<<<<<< HEAD
     flex: 0 0 calc(33.33% - 10px); 
-=======
-    flex: 0 0 calc(33.33% - 10px);
->>>>>>> 7a0c7f3fc379ab12f88c30605f2391b412800004
     background-color: white; 
     padding: 10px; 
     margin: 5px; 
@@ -237,13 +233,8 @@ nav {
 .jacket3 {
     border: 2px solid rgb(0, 0, 0);
     flex: 0 0 calc(33.33% - 10px); 
-<<<<<<< HEAD
     background-color: white; /
     padding: 10px; 
-=======
-    background-color: white; 
-    padding: 10px;
->>>>>>> 7a0c7f3fc379ab12f88c30605f2391b412800004
     margin: 5px; 
     text-align: center;
 }
@@ -258,25 +249,14 @@ nav {
 .jacket5 {
     border: 2px solid rgb(0, 0, 0);
     flex: 0 0 calc(33.33% - 10px);
-<<<<<<< HEAD
     padding: 10px; 
     margin: 5px; 
-=======
-    background-color: white;
-    padding: 10px; 
-    margin: 5px; 
-    text-align: center;
->>>>>>> 7a0c7f3fc379ab12f88c30605f2391b412800004
 }
 .jacket6 {
     border: 2px solid rgb(0, 0, 0);
     flex: 0 0 calc(33.33% - 10px); 
     background-color: white; 
-<<<<<<< HEAD
     padding: 10px; 
-=======
-    padding: 10px;
->>>>>>> 7a0c7f3fc379ab12f88c30605f2391b412800004
     margin: 5px; 
     text-align: center;
 }
