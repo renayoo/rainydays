@@ -146,8 +146,8 @@ nav {
     border: 1px solid #ffffff;
 }
 
-.RainyDays_jacket1.jpg {
-
+.product-image {
+    max-width: 35%;
 }
 .product-details {
     flex: 1;
@@ -234,7 +234,7 @@ footer a:hover {
         z-index: 1;
     }
     .product-image {
-        width: 100%;
+        max-width: 100%;
     }
     .product-details {
         padding: 10px 20px;
