@@ -233,14 +233,14 @@ nav {
 .jacket3 {
     border: 2px solid rgb(0, 0, 0);
     flex: 0 0 calc(33.33% - 10px); 
-    background-color: white; /
+    background-color: white; 
     padding: 10px; 
     margin: 5px; 
     text-align: center;
 }
 .jacket4 {
     border: 2px solid rgb(0, 0, 0);
-    flex: 0 0 calc(33.33% - 10px); 
+    flex: 0 0 calc(33.33% - 10px);
     background-color: white; 
     padding: 10px; 
     margin: 5px; 
@@ -248,9 +248,11 @@ nav {
 }
 .jacket5 {
     border: 2px solid rgb(0, 0, 0);
-    flex: 0 0 calc(33.33% - 10px);
+    flex: 0 0 calc(33.33% - 10px); 
+    background-color: white; 
     padding: 10px; 
     margin: 5px; 
+    text-align: center;
 }
 .jacket6 {
     border: 2px solid rgb(0, 0, 0);
@@ -263,11 +265,9 @@ nav {
 .jacket7 {
     border: 2px solid rgb(0, 0, 0);
     flex: 0 0 calc(33.33% - 10px); 
-    background-color: white; 
-    padding: 10px; 
+    background-color: white;
     margin: 5px; 
     text-align: center;
-    
 }
 .jacket1 a {
     text-decoration: none;
