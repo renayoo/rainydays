@@ -150,7 +150,7 @@ nav {
 .product-image {
     display: flex;
     flex: 1;
-    max-width: 35%;
+    width: 20%;
 }
 .product-details {
     flex: 1;
@@ -198,6 +198,7 @@ footer {
     text-align: center;
     justify-content: space-between;
     font-weight: bold;
+    position: relative;
 }
 footer a {
     color: #fff;
@@ -214,9 +215,6 @@ footer a:hover {
     text-transform: uppercase;
     height: 100%;
 }
-.burger-menu-image {
-    height: 50px;
-}
 
 
 @media (max-width: 900px) {
@@ -226,9 +224,18 @@ footer a:hover {
 
     .nav-buttons-main {
         display: none;
+    } 
+    .product-container {
+        flex-direction: column;
+        z-index: 1;
     }
-    
-    .about-content {
-        font-size: 18px;
+    .product-image {
+        width: 100%;
+    }
+    .product-details {
+        padding: 10px 20px;
+        background-color: var(--primary-blue);
+    .footer {
+        z-index: 2;
     }
 }

@@ -157,7 +157,7 @@ nav {
     color: white;
 }
 .product-image {
-    max-width: 500px;
+    max-width: 60%;
     display: flex;
 }
 form {
@@ -224,4 +224,14 @@ footer a:hover {
     .nav-buttons-main {
         display: none;
     }
+    .container {
+        flex-direction: column;
+    }
+    input[type="text"], input[type="number"], input[type="email"] {
+        width: 300px;
+        padding: 10px;
+        border: 1px solid #000000;
+        border-radius: 5px;
+    }
+
 }
