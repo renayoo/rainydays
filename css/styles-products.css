@@ -216,58 +216,58 @@ nav {
 
 .jacket1 {
     border: 2px solid rgb(0, 0, 0);
-    flex: 0 0 calc(33.33% - 10px); /* Three items per row with some spacing */
-    background-color: white; /* Box background color */
-    padding: 10px; /* Spacing around each product box */
-    margin: 5px; /* Space between product boxes */
+    flex: 0 0 calc(33.33% - 10px); 
+    background-color: white; 
+    padding: 10px; 
+    margin: 5px; 
     text-align: center;
 }
 .jacket2 {
     border: 2px solid rgb(0, 0, 0);
-    flex: 0 0 calc(33.33% - 10px); /* Three items per row with some spacing */
-    background-color: white; /* Box background color */
-    padding: 10px; /* Spacing around each product box */
-    margin: 5px; /* Space between product boxes */
+    flex: 0 0 calc(33.33% - 10px);
+    background-color: white; 
+    padding: 10px; 
+    margin: 5px; 
     text-align: center;
 }
 .jacket3 {
     border: 2px solid rgb(0, 0, 0);
-    flex: 0 0 calc(33.33% - 10px); /* Three items per row with some spacing */
-    background-color: white; /* Box background color */
-    padding: 10px; /* Spacing around each product box */
-    margin: 5px; /* Space between product boxes */
+    flex: 0 0 calc(33.33% - 10px); 
+    background-color: white; 
+    padding: 10px;
+    margin: 5px; 
     text-align: center;
 }
 .jacket4 {
     border: 2px solid rgb(0, 0, 0);
-    flex: 0 0 calc(33.33% - 10px); /* Three items per row with some spacing */
-    background-color: white; /* Box background color */
-    padding: 10px; /* Spacing around each product box */
-    margin: 5px; /* Space between product boxes */
+    flex: 0 0 calc(33.33% - 10px); 
+    background-color: white; 
+    padding: 10px; 
+    margin: 5px; 
     text-align: center;
 }
 .jacket5 {
     border: 2px solid rgb(0, 0, 0);
-    flex: 0 0 calc(33.33% - 10px); /* Three items per row with some spacing */
-    background-color: white; /* Box background color */
-    padding: 10px; /* Spacing around each product box */
-    margin: 5px; /* Space between product boxes */
+    flex: 0 0 calc(33.33% - 10px);
+    background-color: white;
+    padding: 10px; 
+    margin: 5px; 
     text-align: center;
 }
 .jacket6 {
     border: 2px solid rgb(0, 0, 0);
-    flex: 0 0 calc(33.33% - 10px); /* Three items per row with some spacing */
-    background-color: white; /* Box background color */
-    padding: 10px; /* Spacing around each product box */
-    margin: 5px; /* Space between product boxes */
+    flex: 0 0 calc(33.33% - 10px); 
+    background-color: white; 
+    padding: 10px;
+    margin: 5px; 
     text-align: center;
 }
 .jacket7 {
     border: 2px solid rgb(0, 0, 0);
-    flex: 0 0 calc(33.33% - 10px); /* Three items per row with some spacing */
-    background-color: white; /* Box background color */
-    padding: 10px; /* Spacing around each product box */
-    margin: 5px; /* Space between product boxes */
+    flex: 0 0 calc(33.33% - 10px); 
+    background-color: white; 
+    padding: 10px; 
+    margin: 5px; 
     text-align: center;
     
 }
