@@ -229,10 +229,30 @@ footer a:hover {
         flex-direction: column;
     }
     input[type="text"], input[type="number"], input[type="email"] {
-        width: 300px;
+        width: 500px;
         padding: 10px;
         border: 1px solid #000000;
         border-radius: 5px;
     }
 
+}
+
+@media (max-width: 520px) {
+    .burger-menu-label {
+        display: flex;
+        padding-top: 30px;
+    }
+
+    .nav-buttons-main {
+        display: none;
+    }
+    .container {
+        flex-direction: column;
+    }
+    input[type="text"], input[type="number"], input[type="email"] {
+        width: 320px;
+        padding: 10px;
+        border: 1px solid #000000;
+        border-radius: 5px;
+    }
 }

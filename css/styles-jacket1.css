@@ -148,7 +148,7 @@ nav {
     z-index: 1;
 }
 
-.product-image {
+.RainyDays_jacket1.jpg {
     display: flex;
     flex: 1;
     width: 20%;
@@ -172,11 +172,16 @@ nav {
     text-transform: uppercase;
     color: #f0eded;
     line-height: 1.6;
-    text-align: center;
+    text-align: left
 }
 .select-size {
     text-transform: uppercase;
     color: white;
+    font-size: 20px;
+}
+.select-size-buttons {
+    color: #ffffff;
+    font-size: 20px;
 }
 .add-to-cart {
     background-color: #5e5e5e;
