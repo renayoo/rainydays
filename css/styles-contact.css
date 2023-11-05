@@ -148,9 +148,9 @@ nav {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    border: 1px solid #ffffff;
     color: #ffffff;
     text-transform: uppercase;
+    overflow: auto;
 }
 
 .contact-form {
