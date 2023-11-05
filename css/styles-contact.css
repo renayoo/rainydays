@@ -149,12 +149,13 @@ nav {
     height: 100vh;
     border: 1px solid #ffffff;
     color: #ffffff;
-    text-shadow: 10px 10px 5px rgb(0, 0, 0);
     text-transform: uppercase;
 }
 
 .contact-form {
     padding: 90px;
+    background-color: #000000;
+    opacity: 0.8;
     border-radius: 30px;
     text-align: center;
 }
