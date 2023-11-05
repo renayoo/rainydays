@@ -201,8 +201,6 @@ footer {
     justify-content: space-between;
     font-weight: bold;
     position: relative;
-    display: ;
-    z-index: 2;
 }
 footer a {
     color: #fff;
@@ -231,7 +229,6 @@ footer a:hover {
     } 
     .product-container {
         flex-direction: column;
-        z-index: 1;
     }
     .product-image {
         max-width: 100%;
@@ -239,7 +236,5 @@ footer a:hover {
     .product-details {
         padding: 10px 20px;
         background-color: var(--primary-blue);
-    .footer {
-        z-index: 2;
     }
 }
