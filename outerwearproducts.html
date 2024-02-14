@@ -14,6 +14,7 @@
       content="Pushing the comfort zone with Rainy Days clothing"
     />
     <title>Rainy Days</title>
+    <script defer src="index.js"></script>
   </head>
 
   <body>
@@ -76,104 +77,15 @@
         </div>
       </div>
       <h2 class="headline-products">OUR COLLECTION</h2>
-      <div class="product-grid">
-        <div class="product-list">
-          <div class="products">
-            <div class="jacket1">
-              <a href="jacket1.html">
-              <img src="product_images/RainyDays_Jacket1.jpg" alt="Jacket 1">
-              <h3>Jacket1</h3>
-            </a>
-              <p>Select size:</p>
-                <div class="size-buttons">
-                  <a class="size-buttons" href="cart.html">
-                    <button class="S">S</button> 
-                    <button class="M">M</button>
-                    <button class="L">L</button>
-                  </a>
-                </div>
-              <div class="price">$170</div>
-            </div>
-            <div class="jacket2">
-              <img src="product_images/RainyDays_Jacket2.jpg" alt="jacket 2">
-              <h3>Jacket2</h3>
-              <p>Select size:</p>
-                <div class="size-buttons">  
-                  <a class="size-buttons" href="cart.html">              
-                    <button class="S">S</button> 
-                    <button class="M">M</button>
-                    <button class="L">L</button>
-                  </a>
-                </div>
-              <div class="price">$99</div>
-            </div>
-            <div class="jacket3">
-              <img src="product_images/RainyDays_Jacket3.jpg" alt="Jacket 3">
-              <h3>Jacket3</h3>
-              <p>Select size:</p>
-                <div class="size-buttons">                
-                  <a class="size-buttons" href="cart.html">              
-                    <button class="S">S</button> 
-                    <button class="M">M</button>
-                    <button class="L">L</button>
-                  </a>
-                </div>
-              <div class="price">$99</div>
-            </div>
-            <div class="jacket4">
-              <img src="product_images/RainyDays_Jacket4.jpg" alt="Jacket 4">
-              <h3>Jacket4</h3>
-              <p>Select size:</p>
-                <div class="size-buttons">                
-                  <a class="size-buttons" href="cart.html">              
-                    <button class="S">S</button> 
-                    <button class="M">M</button>
-                    <button class="L">L</button>
-                  </a>
-                </div>
-              <div class="price">$170</div>
-            </div>
-            <div class="jacket5">
-              <img src="product_images/RainyDays_Jacket5.jpg" alt="Jacket 5">
-              <h3>Jacket5</h3>
-              <p>Select size:</p>
-                <div class="size-buttons">              
-                  <a class="size-buttons" href="cart.html">              
-                    <button class="S">S</button> 
-                    <button class="M">M</button>
-                    <button class="L">L</button>
-                  </a>
-                </div>
-              <div class="price">$120</div>
-            </div>
-            <div class="jacket6">
-              <img src="product_images/RainyDays_Jacket6.jpg" alt="Jacket 6">
-              <h3>Jacket6</h3>
-              <p>Select size:</p>
-                <div class="size-buttons">
-                  <a class="size-buttons" href="cart.html">
-                    <button class="S">S</button> 
-                    <button class="M">M</button>
-                    <button class="L">L</button>
-                  </a>
-                </div>
-              <div class="price">$170</div>
-            </div>
-            <div class="jacket7">
-              <img src="product_images/RainyDays_Jacket7.jpg" alt="Jacket 7">
-              <h3>Jacket7</h3>
-              <p>Select size:</p>
-                <div class="size-buttons">
-                  <a class="size-buttons" href="cart.html">
-                    <button class="S">S</button> 
-                    <button class="M">M</button>
-                    <button class="L">L</button>
-                  </a>
-                </div>
-              <div class="price">$99</div>
-            </div>
-          </div>
-        </div>
+      <button id="sortAscendingBtn">Sort Price Low - High</button>
+      <button id="sortDescendingBtn">Sort Price High - Low</button>
+      <button id="filterMaleBtn">Male Products</button>
+      <button id="filterFemaleBtn">Female Products</button>
+      <button id="filterOnSaleBtn">Products On Sale</button>
+      <button id="filterFavoritesBtn">Popular favorites</button>
+      <ul id="productList">
+        <div id="product-list"></div>
+      </ul>
     <footer>
       <a href="#faq">FAQ</a>
       <a href="#terms">Terms and Conditions</a>
