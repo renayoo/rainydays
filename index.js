@@ -9,14 +9,31 @@ const filterFavoritesBtn = document.getElementById('filterFavoritesBtn');
 let productsData; 
 
 
-// Fetch API data initially
-fetch('https://api.noroff.dev/api/v1/rainy-days')
-    .then(response => response.json())
-    .then(data => {
-        productsData = data; 
+/// Fetch API data initially
+async function fetchProducts() {
+    try {
+        const response = await fetch('https://api.noroff.dev/api/v1/rainy-days');
+        if (!response.ok) {
+            throw new Error('Failed to fetch data');
+        }
+        return await response.json();
+    } catch (error) {
+        console.error('Error fetching data:', error);
+        throw error;
+    }
+}
+
+async function initialize() {
+    try {
+        productsData = await fetchProducts();
         displayProducts(productsData); 
-    })
-    .catch(error => console.error('Error fetching data:', error));
+    } catch (error) {
+        // Handle errors if needed
+    }
+}
+
+initialize();
+
 
 // Event listeners for sorting buttons
 sortAscendingBtn.addEventListener('click', () => {
@@ -112,5 +129,4 @@ function displayProducts(products) {
         productList.appendChild(productElement);
     });
 
-    console.log (products);
 }

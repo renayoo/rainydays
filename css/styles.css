@@ -228,7 +228,6 @@ footer a {
 footer a:hover {
     text-decoration: none;
     color: black;
-    padding: 5px;
     text-transform: uppercase;
     height: 100%;
 }

@@ -177,16 +177,22 @@ nav {
     margin: 0; 
 }
 
+.filter-btns {
+    text-align: center;
+    background-color: var(--primary-blue);
+    padding: 10px;
+}
 button {
     padding: 10px 30px;
+    margin: 5px;
     color: rgb(0, 0, 0);
-    border: white solid 3px;
+    border: white solid 2px;
     background-color: rgb(180, 180, 255);
     cursor: pointer;
     text-transform: uppercase;
     font-weight: 500;
     font-size: 18px;
-    width: 200px;
+    width: 30%;
     border-radius: 10px;
     font-weight: 300;
 }
@@ -209,7 +215,7 @@ button:hover {
 }
 
 .product {
-    flex: 0 1 calc(50% - 20px);
+    flex: 0 1 calc(25% - 20px);
     padding: 20px;
     border: 1px solid #000000;
     border-radius: 5px;
@@ -259,6 +265,13 @@ footer a:hover {
     height: 100%;
 }
 
+
+@media (max-width: 1200px) {
+    .product {
+        flex: 0 1 calc(50% - 20px);
+    }
+
+}
 @media (max-width: 900px) {
     .burger-menu-label {
         display: flex;
@@ -271,6 +284,7 @@ footer a:hover {
     button {
         width: 100%;
     }
+
     #productList {
         justify-content: center;
         width: 100%;
