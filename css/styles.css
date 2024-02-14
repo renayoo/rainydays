@@ -186,7 +186,6 @@ nav {
 
 .second-banner-content { 
     display: flex;
-    background-color: #d7d7d7;
 }
 .second-banner-text {
     padding: 50px;
@@ -197,7 +196,7 @@ nav {
 }
 .second-banner-content { 
     display: flex;
-    background-color: var(--grey-background);
+    background-color: rgb(0, 145, 194);
 }
 .second-banner-content h2 {
     text-align: center;
@@ -228,7 +227,6 @@ footer a {
 
 footer a:hover {
     text-decoration: none;
-    background-color: white;
     color: black;
     padding: 5px;
     text-transform: uppercase;
@@ -259,6 +257,10 @@ footer a:hover {
     }
     .banner-buttons {
         margin-top: 30px;
+        flex-direction: column;
+    }
+    footer {
+        display: flex;
         flex-direction: column;
     }
 

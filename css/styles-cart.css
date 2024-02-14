@@ -208,7 +208,6 @@ footer a {
 
 footer a:hover {
     text-decoration: none;
-    background-color: white;
     color: black;
     padding: 5px;
     text-transform: uppercase;
@@ -254,5 +253,9 @@ footer a:hover {
         padding: 10px;
         border: 1px solid #000000;
         border-radius: 5px;
+    }
+    footer {
+        display: flex;
+        flex-direction: column;
     }
 }

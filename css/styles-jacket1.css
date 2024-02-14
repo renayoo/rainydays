@@ -211,7 +211,6 @@ footer a {
 }
 footer a:hover {
     text-decoration: none;
-    background-color: white;
     color: black;
     padding: 5px;
     text-transform: uppercase;
@@ -236,5 +235,9 @@ footer a:hover {
     .product-details {
         padding: 10px 20px;
         background-color: var(--primary-blue);
+    }
+    footer {
+        display: flex;
+        flex-direction: column;
     }
 }

@@ -195,7 +195,6 @@ footer a {
 
 footer a:hover {
     text-decoration: none;
-    background-color: white;
     color: black;
     padding: 10px;
     text-transform: uppercase;
@@ -214,5 +213,9 @@ footer a:hover {
     
     .about-content {
         font-size: 18px;
+    }
+    footer {
+        display: flex;
+        flex-direction: column;
     }
 }
