@@ -139,22 +139,17 @@ nav {
     left: 0;
 }
 
-.product-container {
+
+#productDetails {
     display: flex;
+    flex-direction: column;
     background-color: var(--primary-blue);
-    max-width: 100%; 
     border: 1px solid #ffffff;
+    align-items: center;
+
 }
 
-.product-image {
-    max-width: 35%;
-}
-.product-details {
-    flex: 1;
-    padding: 30px;
-}
-
-.product-title {
+#productDetails h2 {
     font-size: 24px;
     color: #fff;
     text-transform: uppercase;
@@ -163,34 +158,34 @@ nav {
     text-align: center;
 }
 
-.product-description {
+#productDetails img {
+    max-width: 35%;
+}
+
+#productDetails p {
     font-size: 16px;
     text-transform: uppercase;
     color: #f0eded;
-    line-height: 1.6;
-    text-align: left
+    text-align: left;   
 }
-.select-size {
-    text-transform: uppercase;
+
+button {
+    padding: 10px 30px;
     color: white;
-    font-size: 20px;
-}
-.select-size-buttons {
-    color: #ffffff;
-    font-size: 20px;
-}
-.add-to-cart {
-    background-color: #5e5e5e;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
+    border: white solid 3px;
+    background-color: var(--primary-blue);
     cursor: pointer;
-    margin-top: 50px;
     text-transform: uppercase;
+    font-weight: 700;
+    font-size: 18px;
+    min-width: 200px;
+    margin: 20px;
 }
-.add-to-cart a:hover {
+
+button:hover {
     background-color: white;
-    color: black
+    color: var(--primary-blue);
+
 }
 
 footer {
@@ -225,16 +220,13 @@ footer a:hover {
     .nav-buttons-main {
         display: none;
     } 
-    .product-container {
+    #productDetails {
         flex-direction: column;
     }
-    .product-image {
+    #productDetails img {
         max-width: 100%;
     }
-    .product-details {
-        padding: 10px 20px;
-        background-color: var(--primary-blue);
-    }
+
     footer {
         display: flex;
         flex-direction: column;

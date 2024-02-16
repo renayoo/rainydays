@@ -1,3 +1,5 @@
+//JAVASCRIPT FOR THE PRODUCT LIST SITE
+
 // Variable definitions
 const productList = document.getElementById('productList');
 const sortAscendingBtn = document.getElementById('sortAscendingBtn');

@@ -1,3 +1,5 @@
+//JAVASCRIPT FOR THE PRODUCT DETAILS SITE
+
 window.onload = async function() {
     const productId = new URLSearchParams(window.location.search).get('id');
     if (!productId) {
@@ -13,7 +15,7 @@ window.onload = async function() {
         // Handle error: Unable to fetch product details
     }
     
-    // Add event listener to the "Back to Products" button
+    // Event listener for "Back to Products" button
     const backButton = document.getElementById('backButton');
     if (backButton) {
         backButton.addEventListener('click', () => {
@@ -34,15 +36,25 @@ async function fetchProductDetails(productId) {
     }
 }
 
+
 function displayProductDetails(productDetails) {
     const productDetailsContainer = document.getElementById('productDetails');
+    let priceDisplay = `<p>Price: $${productDetails.price.toFixed(2)}</p>`;
+    
+    if (productDetails.onSale && productDetails.discountedPrice) {
+        priceDisplay = `
+            <p><s>Price: $${productDetails.price.toFixed(2)}</s></p>
+            <p>Sale Price: $${productDetails.discountedPrice.toFixed(2)}</p>
+        `;
+    }
+
     productDetailsContainer.innerHTML = `
         <h2>${productDetails.title}</h2>
+        <button id="backButton">Back to Products</button> 
         <img src="${productDetails.image}" alt="${productDetails.title}">
-        <p>Description: ${productDetails.description}</p>
-        <p>Price: $${productDetails.price.toFixed(2)}</p>
-        ${productDetails.discountedPrice ? `<p>Sale Price: $${productDetails.discountedPrice.toFixed(2)}</p>` : ''}
+        <p>${productDetails.description}</p>
+        ${priceDisplay}
         <button>Add to Basket</button>
-        <button id="backButton">Back to Products</button> <!-- Back to Products button -->
+        <!-- Back to Products button -->
     `;
 }
