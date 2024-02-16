@@ -1,5 +1,3 @@
-//JAVASCRIPT FOR THE PRODUCT DETAILS SITE
-
 window.onload = async function() {
     const productId = new URLSearchParams(window.location.search).get('id');
     if (!productId) {
@@ -10,6 +8,8 @@ window.onload = async function() {
     try {
         const productDetails = await fetchProductDetails(productId);
         displayProductDetails(productDetails);
+        // Set the document title to the product title
+        document.title = productDetails.title;
     } catch (error) {
         console.error('Error fetching product details:', error);
         // Handle error: Unable to fetch product details
@@ -50,11 +50,12 @@ function displayProductDetails(productDetails) {
 
     productDetailsContainer.innerHTML = `
         <h2>${productDetails.title}</h2>
+        <!-- Back to Products button -->
         <button id="backButton">Back to Products</button> 
         <img src="${productDetails.image}" alt="${productDetails.title}">
         <p>${productDetails.description}</p>
         ${priceDisplay}
+        <!-- Add to basket -->
         <button>Add to Basket</button>
-        <!-- Back to Products button -->
     `;
 }
