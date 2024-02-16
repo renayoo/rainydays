@@ -154,6 +154,7 @@ h1 {
 }
 .container-thanksorder p {
     color: var(--primary-blue);
+    font-size: 25px;
 }
 .container-thanksorder img {
     max-width: 100px;
