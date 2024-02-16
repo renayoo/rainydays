@@ -32,8 +32,8 @@ async function initialize() {
     }
 }
 
-initialize();
 
+initialize();
 
 // Event listeners for sorting buttons
 sortAscendingBtn.addEventListener('click', () => {
@@ -105,28 +105,39 @@ function displayProducts(products) {
         const productElement = document.createElement('div');
         productElement.classList.add('product');
 
-            // Product on sale, yes no price
-            let priceDisplay = '';
-            if (product.onSale && product.discountedPrice) {
-                priceDisplay = `
-                    <p><s>Price: $${product.price.toFixed(2)}</s></p>
-                    <p>Sale Price: $${product.discountedPrice.toFixed(2)}</p>
-                `;
-            } else {
-                priceDisplay = `
-                    <p>Price: $${product.price.toFixed(2)}</p>
-                `;
-            }
+        // Set unique ID for each product element
+        productElement.setAttribute('id', `product-${product.id}`);
+
+        // Product on sale, yes no price
+        let priceDisplay = '';
+        if (product.onSale && product.discountedPrice) {
+            priceDisplay = `
+                <p><s>Price: $${product.price.toFixed(2)}</s></p>
+                <p>Sale Price: $${product.discountedPrice.toFixed(2)}</p>
+            `;
+        } else {
+            priceDisplay = `
+                <p>Price: $${product.price.toFixed(2)}</p>
+            `;
+        }
 
 
         productElement.innerHTML = `
-        <img src="${product.image}" alt="${product.title}">
-        <h3>${product.title}</h3>
-        <p>${product.description}</p>
-        ${priceDisplay}
+            <img src="${product.image}" alt="${product.title}">
+            <h3>${product.title}</h3>
+            ${priceDisplay}
+            <button id="basketBtn">Add to Basket</button>
         `;
 
+        // Add click event listener to redirect to product details page
+        productElement.addEventListener('click', () => {
+            window.location.href = `/product/index.html?id=${product.id}`;
+        });
+
+        // Append product element to the product list container
         productList.appendChild(productElement);
     });
-
 }
+
+
+

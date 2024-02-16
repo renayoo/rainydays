@@ -201,8 +201,8 @@ button:hover {
     background-color: white;
 }
 
-#sizeBtn {
-    
+#basketBtn {
+    width: 200px;
 }
 
 #productList {
@@ -273,6 +273,7 @@ footer a:hover {
 
 }
 @media (max-width: 900px) {
+
     .burger-menu-label {
         display: flex;
     }
