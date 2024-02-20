@@ -1,1 +1,74 @@
-//check out page showing all items in basket
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Order confirmation site"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link href="/css/styles-thanksorder.css" rel="stylesheet" />
+    <script defer src="checkout.js"></script>
+    <link rel="icon" href="favicon-32x32.png" type="favicon.rainydays">
+    <title>Your cart</title>
+</head>
+
+<body>
+    <header>
+    <!-- BURGER MENU -->
+    <input id="burger-menu-input" type="checkbox" />
+    <label class="burger-menu-label" for="burger-menu-input">
+        <img
+        class="burger-menu-image"
+        src="/Hamburger_icon.png"
+        alt="hamburger menu"
+        />
+    </label>
+    <!-- BURGER MENU DROPDOWN -->
+    <div class="burger-menu-box">
+    <div class="burger-menu-button">
+        <label for="burger-menu-input">
+            <img
+            class="burger-menu-image"
+            src="https://w7.pngwing.com/pngs/1008/558/png-transparent-computer-icons-button-close-angle-rectangle-logo.png"
+            alt="hamburger menu"
+            />
+        </label>
+    </div>
+    <ul>
+        <li><a class="burger-menu-item" href="/index.html">Home</a></li>
+        <li><a class="burger-menu-item" href="/outerwearproducts.html">Products</a></li>
+        <li><a class="burger-menu-item" href="/aboutus.html">About us</a></li>
+        <li><a class="burger-menu-item" href="/contactus.html">Contact</a></li>
+    </ul>
+    </div>
+
+    <!-- LOGO -->
+    <a class="banner-logo" href="index.html">
+    <img src="/RainyDays_Logo.png" alt="Rainy Days logo" />
+    </a>
+
+    <!-- NAV BAR ITEMS -->
+    <nav class="nav-buttons-main">
+    <ul class="nav-buttons">
+        <li><a href="/index.html">Home</a></li>
+        <li><a href="/outerwearproducts.html">Products</a></li>
+        <li><a href="/aboutus.html">About Us</a></li>
+        <li><a href="/contactus.html">Contact</a></li>
+        </ul>
+    </nav>
+    <a class="shopping-cart" href="/checkout/index.html">
+        <img src="/cart.png" alt="cart"/>
+    </a>
+</header>
+<main>
+    <div id="checkoutProductList"></div>
+    <button id="confirmBtn"><a href="confirmation/index.html">Confirm order</a></button>
+</main>
+<footer>
+    <a href="#faq">FAQ</a>
+    <a href="#terms">Terms and Conditions</a>
+    <a href="#contact">Contact</a>
+    <a href="#social-media">Follow Us on Social Media</a>
+    <a href="#about">About Us</a>
+</footer>
+</body>
+</html>
