@@ -16,14 +16,14 @@ window.onload = async function() {
     }
     
     // Event listener - "Back to Products" button
-    const backButton = document.getElementById('backButton');
-    if (backButton) {
-        backButton.addEventListener('click', () => {
+    const backBtn = document.getElementById('backBtn');
+    if (backBtn) {
+        backBtn.addEventListener('click', () => {
             window.location.href = '/outerwearproducts.html'; // Navigation - back to the products list page
         });
     }
     
-    // Event listener for "Add to Basket" button
+    // Event listener - "Add to Basket" button
     const addToCartBtn = document.getElementById('addToCart');
     if (addToCartBtn) {
         addToCartBtn.addEventListener('click', addToCart);
@@ -67,7 +67,7 @@ function displayProductDetails(productDetails) {
     productDetailsContainer.innerHTML = `
         <h2>${productDetails.title}</h2>
         <!-- Back to Products button -->
-        <button id="backButton">Back to Products</button> 
+        <button id="backBtn">Back to Products</button> 
         <img src="${productDetails.image}" alt="${productDetails.title}">
         <p>${productDetails.description}</p>
         ${priceDisplay}
@@ -81,7 +81,7 @@ function displayProductDetails(productDetails) {
 function addToCart() {
     const sizeSelect = document.getElementById('sizeSelect');
     const selectedSize = sizeSelect ? sizeSelect.value : null;
-    const productTitle = document.querySelector('h2').textContent; // Get the product title
+    const productTitle = document.querySelector('h2').textContent; 
     
     if (!selectedSize) {
         alert('Please select a size.');
@@ -93,7 +93,6 @@ function addToCart() {
 
     //Alert - item added
     alert('Item added to cart!');
-
 }
 
 function saveToCart(productId, selectedSize, productTitle) {
@@ -106,3 +105,5 @@ function saveToCart(productId, selectedSize, productTitle) {
     // Save the updated cart back to localStorage
     localStorage.setItem('cart', JSON.stringify(cartItems));
 }
+
+

@@ -1,13 +1,3 @@
-// Variable definitions
-const productList = document.getElementById('productList');
-const sortAscendingBtn = document.getElementById('sortAscendingBtn');
-const sortDescendingBtn = document.getElementById('sortDescendingBtn');
-const filterMaleBtn = document.getElementById('filterMaleBtn');
-const filterFemaleBtn = document.getElementById('filterFemaleBtn');
-const filterOnSaleBtn = document.getElementById('filterOnSaleBtn');
-const filterFavoritesBtn = document.getElementById('filterFavoritesBtn');
-let productsData;
-
 // Fetch API data initially
 async function fetchProducts() {
     try {
@@ -33,30 +23,33 @@ async function initialize() {
 
 initialize();
 
-// Event listeners for sorting buttons
-sortAscendingBtn.addEventListener('click', () => {
-    sortAndDisplayProducts(true); // Sort ascending
+
+// Event listener sorting dropdown menu price
+const sortSelect = document.getElementById('sortSelect');
+sortSelect.addEventListener('change', () => {
+    const sortOption = sortSelect.value;
+    if (sortOption === 'ascending') {
+        sortAndDisplayProducts(true); // Sort ascending price
+    } else if (sortOption === 'descending') {
+        sortAndDisplayProducts(false); // Sort descending price
+    }
 });
 
-sortDescendingBtn.addEventListener('click', () => {
-    sortAndDisplayProducts(false); // Sort descending
-});
-
-// Event listeners for filtering buttons
-filterMaleBtn.addEventListener('click', () => {
-    filterAndDisplayProductsByGender('Male'); // Filter male products
-});
-
-filterFemaleBtn.addEventListener('click', () => {
-    filterAndDisplayProductsByGender('Female'); // Filter female products
-});
-
-filterOnSaleBtn.addEventListener('click', () => {
-    filterAndDisplayProductsBySale(true); // Filter products on sale
-});
-
-filterFavoritesBtn.addEventListener('click', () => {
-    filterAndDisplayProductsByFavorites(true); // Filter products that are favorites
+// Event listener - filter dropdown menu
+const filterSelect = document.getElementById('filterSelect');
+filterSelect.addEventListener('change', () => {
+    const filterOption = filterSelect.value;
+    if (filterOption === 'all') {
+        displayProducts(productsData); // all products
+    } else if (filterOption === 'male') {
+        filterAndDisplayProductsByGender('Male'); // man products
+    } else if (filterOption === 'female') {
+        filterAndDisplayProductsByGender('Female'); // woman products
+    } else if (filterOption === 'onsale') {
+        filterAndDisplayProductsBySale(true); // on sale
+    } else if (filterOption === 'favorites') {
+        filterAndDisplayProductsByFavorites(true); // popular favorites
+    }
 });
 
 // Function - sort and display products
@@ -94,25 +87,33 @@ function filterAndDisplayProductsByFavorites(favorite) {
     displayProducts(filteredProducts);
 }
 
-// Function - add a product to the cart
+// Function - Add to cart
 function addToCart(productId) {
     const sizeSelect = document.getElementById(`size-${productId}`);
     const selectedSize = sizeSelect ? sizeSelect.value : null;
-    const productTitle = document.querySelector(`#product-${productId} h3`).textContent;
-    const productImage = document.querySelector(`#product-${productId} img`).getAttribute('src');
-    const productPrice = document.querySelector(`#product-${productId} .price`).textContent;
-    
+    const productElement = document.getElementById(`product-${productId}`);
+    const productTitle = productElement.querySelector('h3').textContent;
+    const productImage = productElement.querySelector('img').getAttribute('src');
+    const productPriceElement = productElement.querySelector('.price');
+    let productPrice = productPriceElement ? productPriceElement.textContent : '';
+
     if (!selectedSize) {
         alert('Please select a size.');
         return;
     }
 
-    //Alert - added to cart
-    alert(`Item added to cart!\nTitle: ${productTitle}\nSize: ${selectedSize}\nPrice: ${productPrice}`);
-    
+    // Retrieve product data from the API
+    const productData = productsData.find(product => product.id === productId);
+
+    // Check if product is on sale yes or no
+    if (productData && productData.onSale && productData.discountedPrice) {
+        productPrice = productData.discountedPrice.toFixed(2);
+    }
+
+    // Alert - added to cart
+    alert(`Item added to cart!\nTitle: ${productTitle}\nSize: ${selectedSize}\nPrice: $${productPrice}`);
+
     saveToCart(productId, selectedSize, productTitle, productImage, productPrice);
-    
-    console.log(`Product added to cart:\nTitle: ${productTitle}\nSize: ${selectedSize}`);
 }
 
 // Function - save products to localStorage
@@ -123,10 +124,9 @@ function saveToCart(productId, selectedSize, productTitle, productImage, product
     // Add item to the cart
     cartItems.push({ productId, selectedSize, productTitle, productImage, productPrice });
 
-    // Save the updated cart back to localStorage
+    // Save the cart
     localStorage.setItem('cart', JSON.stringify(cartItems));
 
-    // Optionally, you can update the UI to reflect the addition of the item to the cart
     updateCartUI();
 }
 
@@ -137,7 +137,6 @@ function getCartItems() {
 
 // Function - update the UI to reflect the current cart state
 function updateCartUI() {
-    // You can implement this function to update the UI with the current cart items
 }
 
 // Function - display products
@@ -170,7 +169,7 @@ function displayProducts(products) {
             </select>
         `;
 
-        // Add to cart button eventListener
+        // Event listener for add to cart Btn
         const addToCartBtn = document.createElement('button');
         addToCartBtn.textContent = 'Add to Cart';
         addToCartBtn.addEventListener('click', () => {
@@ -187,10 +186,7 @@ function displayProducts(products) {
             <br>
         `;
 
-        // Add to cart button to product element
         productElement.appendChild(addToCartBtn);
-
-        // Product element to the product list container
         productList.appendChild(productElement);
     });
 }

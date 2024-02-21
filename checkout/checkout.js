@@ -1,9 +1,9 @@
-// Retrieve cart items from localStorage
+// Retrieve cart products from localStorage
 function getCartItems() {
     return JSON.parse(localStorage.getItem('cart')) || [];
 }
 
-// Function to remove a product from the cart
+// Remove a product from the cart
 function removeFromCart(productId) {
     let cartItems = getCartItems();
     cartItems = cartItems.filter(item => item.productId !== productId);
@@ -11,41 +11,77 @@ function removeFromCart(productId) {
     updateCartUI();
 }
 
-// Function to clear the cart
+// Clear the cart
 function clearCart() {
     localStorage.removeItem('cart');
     updateCartUI();
 }
 
-// Function to display cart items
+// Event listener to the confirm button
+document.getElementById('confirmBtn').addEventListener('click', function() {
+    // Call clearCart function to clear the cart
+    clearCart();
+
+    // Redirect to the confirmation page
+    window.location.href = 'confirmation/index.html';
+});
+
+// Display cart items
 function displayCartItems() {
     const checkoutProductList = document.getElementById('checkoutProductList');
     checkoutProductList.innerHTML = '';
 
     const cartItems = getCartItems();
 
-    cartItems.forEach(item => {
-        const cartItemElement = document.createElement('div');
-        cartItemElement.classList.add('cart-item');
-        // Create necessary HTML to display cart item (product title, size, image, price, etc.)
-        cartItemElement.innerHTML = `
-            <div class="cart-item-details">
-                <img src="${item.productImage}" alt="${item.productTitle}">
-                <div>
-                    <p>${item.productTitle} - Size: ${item.selectedSize}</p>
-                    <p>Price: ${item.productPrice}</p>
+    let totalPrice = 0;
+
+    if (cartItems.length === 0) {
+        // Message Empty cart
+        checkoutProductList.innerHTML = 
+        '<p>Your cart is empty. Please add products to proceed.</p>';
+        // Disable confirm button if cart is empty
+        document.getElementById('confirmBtn').disabled = true;
+    } else {
+        cartItems.forEach(item => {
+            const cartItemElement = document.createElement('div');
+            cartItemElement.classList.add('cart-item');
+
+            // Calculate the price, product on sale yes no
+            let price;
+            if (item.isOnSale && item.discountedPrice !== undefined) {
+                price = item.discountedPrice;
+            } else {
+                price = item.productPrice; // Regular price if not on sale
+            }
+            totalPrice += parseFloat(price); // Price parsed as float
+
+            // HTML (product title, size, image, price, etc.)
+            cartItemElement.innerHTML = `
+                <div class="cart-item-details">
+                    <img src="${item.productImage}" alt="${item.productTitle}">
+                    <div>
+                        <p>${item.productTitle} - Size: ${item.selectedSize}</p>
+                        <p>$${price}</p> 
+                    </div>
                 </div>
-            </div>
-            <button onclick="removeFromCart(${item.productId})">Remove</button>
-        `;
-        checkoutProductList.appendChild(cartItemElement);
-    });
+                <button onclick="removeFromCart('${item.productId}')">Remove</button>
+            `;
+            checkoutProductList.appendChild(cartItemElement);
+        });
+
+        // Display the total price 
+        const totalPriceElement = document.createElement('div');
+        totalPriceElement.innerHTML = `<p>Total Price: $${totalPrice.toFixed(2)}</p>`; // Ensure total price is formatted with two decimal places
+        checkoutProductList.appendChild(totalPriceElement);
+
+        // Make confirm checkout Btn work if products added in cart
+        document.getElementById('confirmBtn').disabled = false;
+    }
 }
 
-// Function to update the UI with the current cart items
 function updateCartUI() {
     displayCartItems();
 }
 
-// Call updateCartUI to initialize the cart display
 updateCartUI();
+

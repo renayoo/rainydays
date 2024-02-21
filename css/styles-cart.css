@@ -138,57 +138,16 @@ nav {
     visibility: visible;
     left: 0;
 }
-.container {
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
-    max-width: 100%x;
-    padding: 20px;
-    border: 1px solid #ffffff;
-    background-color: var(--primary-blue);
-}
-.product-details {
-    flex: 1;
-    padding: 10px;
-    color: white;
-}
-.checkout-form {
-    flex: 1;
-    color: white;
-}
-.product-image {
-    max-width: 60%;
-    display: flex;
-}
-form {
-    margin-top: 20px;
-    align-items: center;
-    text-transform: uppercase;
 
+#checkoutProductList {
+    padding: 20px;
 }
-label, input {
-    display: block;
-    width: 100px;
-    margin-bottom: 30px;
+
+#checkoutProductList img {
+    width: 300px;
 }
-input[type="text"], input[type="number"], input[type="email"] {
-    width: 500px;
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-.placeorder {
-    color: rgb(255, 255, 255);
-    background-color: #8563ff;
-    padding: 20px 50px;
-    border-radius: 2px;
-    border: none;
-    text-transform: uppercase;
-}
-.placeorder button:hover {
-    background-color: #000000;
-    color: #ffffff;
-}
+
+
 footer {
     background-color: var(--primary-blue);
     color: #664040;
