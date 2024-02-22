@@ -11,7 +11,6 @@ window.onload = async function() {
 
         document.title = productDetails.title;
     } catch (error) {
-        console.error('Error fetching product details:', error);
         // Handle error: Unable to fetch product details
     }
     
@@ -106,7 +105,6 @@ async function addToCart() {
             productPrice = productData.price.toFixed(2); // Regular price
         } else {
             // Handle the case where price is not available
-            console.error('Product price is not available:', productData);
             return;
         }
 
@@ -119,9 +117,8 @@ async function addToCart() {
         saveToCart(productId, selectedSize, quantity, productTitle, productImage, productPrice);
 
         // Alert - item added
-        alert('Item added to cart!');
+        alert(`Item added to cart!\nTitle: ${productTitle}\nSize: ${selectedSize}\nQuantity: ${quantity}\nPrice: $${productPrice}`);
     } catch (error) {
-        console.error('Error fetching product details:', error);
         // Handle error: Unable to fetch product details
     }
 }
