@@ -113,7 +113,6 @@ function addToCart(productId) {
         productPrice = productData.price.toFixed(2); // Regular price
     } else {
         // Handle the case where price is not available
-        console.error('Product price is not available:', productData);
         return;
     }
 

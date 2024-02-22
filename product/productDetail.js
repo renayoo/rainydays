@@ -137,14 +137,10 @@ function saveToCart(productId, selectedSize, quantity, productTitle, productImag
     updateCartUI();
 }
 
-// Function - retrieve cart items from localStorage
 function getCartItems() {
     return JSON.parse(localStorage.getItem('cart')) || [];
 }
-
-// Function - update the UI to reflect the current cart state
 function updateCartUI() {
-    // You can implement this function to update the UI as needed when the cart changes
 }
 
 
