@@ -43,17 +43,19 @@ function displayCartItems() {
         document.getElementById('confirmBtn').disabled = true;
     } else {
         cartItems.forEach(item => {
+
             const cartItemElement = document.createElement('div');
             cartItemElement.classList.add('cart-item');
 
-            // Calculate the price, product on sale yes no
+            // Calculate the price, considering if the item is on sale
             let price;
-            if (item.isOnSale && item.discountedPrice !== undefined) {
-                price = item.discountedPrice;
+            if (item.onSale && item.discountedPrice !== undefined) {
+                price = item.discountedPrice; // Use discounted price if available
             } else {
                 price = item.productPrice; // Regular price if not on sale
             }
-            totalPrice += parseFloat(price); // Price parsed as float
+
+            totalPrice += parseFloat(price) * item.quantity; // Price parsed as float
 
             // HTML (product title, size, image, price, etc.)
             cartItemElement.innerHTML = `
@@ -61,6 +63,7 @@ function displayCartItems() {
                     <img src="${item.productImage}" alt="${item.productTitle}">
                     <div>
                         <p>${item.productTitle} - Size: ${item.selectedSize}</p>
+                        <p>Quantity: ${item.quantity}</p> 
                         <p>$${price}</p> 
                     </div>
                 </div>

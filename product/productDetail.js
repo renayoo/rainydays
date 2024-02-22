@@ -36,7 +36,8 @@ async function fetchProductDetails(productId) {
         if (!response.ok) {
             throw new Error('Failed to fetch product details');
         }
-        return await response.json();
+        const productDetails = await response.json();
+        return productDetails;
     } catch (error) {
         throw error;
     }
@@ -63,6 +64,9 @@ function displayProductDetails(productDetails) {
         sizesDropdown += '</select>';
     }
     
+    // Quantity selector
+    const quantitySelector = '<input type="number" id="quantity" value="1" min="1">';
+    
     // Product container
     productDetailsContainer.innerHTML = `
         <h2>${productDetails.title}</h2>
@@ -73,37 +77,77 @@ function displayProductDetails(productDetails) {
         ${priceDisplay}
         <!-- Sizes dropdown -->
         ${sizesDropdown}
+        <!-- Quantity selector -->
+        <label for="quantity">Quantity:</label>
+        <span class="quantity-text">${quantitySelector}</span>
         <!-- Add to Cart -->
         <button id="addToCart">Add to Cart</button>
     `;
 }
 
-function addToCart() {
+// Function - Add to cart
+async function addToCart() {
     const sizeSelect = document.getElementById('sizeSelect');
     const selectedSize = sizeSelect ? sizeSelect.value : null;
-    const productTitle = document.querySelector('h2').textContent; 
-    
-    if (!selectedSize) {
-        alert('Please select a size.');
-        return;
-    }
+    const quantity = parseInt(document.getElementById('quantity').value);
+    const productTitle = document.querySelector('h2').textContent;
+    const productImage = document.querySelector('img').getAttribute('src');
+    let productPrice = ''; // Initialize productPrice
 
+    // Retrieve product data from the API
     const productId = new URLSearchParams(window.location.search).get('id');
-    saveToCart(productId, selectedSize, productTitle);
+    try {
+        const productData = await fetchProductDetails(productId);
 
-    //Alert - item added
-    alert('Item added to cart!');
+        // Product on discount, yes or no
+        if (productData && productData.onSale && productData.discountedPrice) {
+            productPrice = productData.discountedPrice.toFixed(2); // Discount price
+        } else if (productData && productData.price) {
+            productPrice = productData.price.toFixed(2); // Regular price
+        } else {
+            // Handle the case where price is not available
+            console.error('Product price is not available:', productData);
+            return;
+        }
+
+        if (!selectedSize) {
+            alert('Please select a size.');
+            return;
+        }
+
+        // Save item to the cart
+        saveToCart(productId, selectedSize, quantity, productTitle, productImage, productPrice);
+
+        // Alert - item added
+        alert('Item added to cart!');
+    } catch (error) {
+        console.error('Error fetching product details:', error);
+        // Handle error: Unable to fetch product details
+    }
 }
 
-function saveToCart(productId, selectedSize, productTitle) {
+// Function - save products to localStorage
+function saveToCart(productId, selectedSize, quantity, productTitle, productImage, productPrice) {
     // Retrieve existing cart items from localStorage
     const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
 
     // Add item to the cart
-    cartItems.push({ productId, selectedSize, productTitle });
+    cartItems.push({ productId, selectedSize, quantity, productTitle, productImage, productPrice });
 
     // Save the updated cart back to localStorage
     localStorage.setItem('cart', JSON.stringify(cartItems));
+
+    updateCartUI();
+}
+
+// Function - retrieve cart items from localStorage
+function getCartItems() {
+    return JSON.parse(localStorage.getItem('cart')) || [];
+}
+
+// Function - update the UI to reflect the current cart state
+function updateCartUI() {
+    // You can implement this function to update the UI as needed when the cart changes
 }
 
 

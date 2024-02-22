@@ -169,6 +169,12 @@ nav {
     text-align: center; 
 }
 
+label[for="quantity"] {
+    color: white;
+    text-transform: uppercase;
+    margin: 5px;
+}
+
 button {
     padding: 10px 30px;
     color: white;

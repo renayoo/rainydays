@@ -90,39 +90,46 @@ function filterAndDisplayProductsByFavorites(favorite) {
 // Function - Add to cart
 function addToCart(productId) {
     const sizeSelect = document.getElementById(`size-${productId}`);
-    const selectedSize = sizeSelect ? sizeSelect.value : null;
-    const productElement = document.getElementById(`product-${productId}`);
-    const productTitle = productElement.querySelector('h3').textContent;
-    const productImage = productElement.querySelector('img').getAttribute('src');
-    const productPriceElement = productElement.querySelector('.price');
-    let productPrice = productPriceElement ? productPriceElement.textContent : '';
-
+    const selectedSize = sizeSelect ? sizeSelect.value : null; // Retrieve selected size value
     if (!selectedSize) {
         alert('Please select a size.');
         return;
     }
+    
+    const quantityInput = document.getElementById(`quantity-${productId}`);
+    const quantity = quantityInput ? parseInt(quantityInput.value) : 1; 
+    const productElement = document.getElementById(`product-${productId}`);
+    const productTitle = productElement.querySelector('h3').textContent;
+    const productImage = productElement.querySelector('img').getAttribute('src');
+    let productPrice = ''; // Initialize productPrice
 
     // Retrieve product data from the API
     const productData = productsData.find(product => product.id === productId);
 
-    // Check if product is on sale yes or no
+    // Product on dicount, yes or no
     if (productData && productData.onSale && productData.discountedPrice) {
-        productPrice = productData.discountedPrice.toFixed(2);
+        productPrice = productData.discountedPrice.toFixed(2); // Discount price
+    } else if (productData && productData.price) {
+        productPrice = productData.price.toFixed(2); // Regular price
+    } else {
+        // Handle the case where price is not available
+        console.error('Product price is not available:', productData);
+        return;
     }
 
     // Alert - added to cart
-    alert(`Item added to cart!\nTitle: ${productTitle}\nSize: ${selectedSize}\nPrice: $${productPrice}`);
+    alert(`Item added to cart!\nTitle: ${productTitle}\nSize: ${selectedSize}\nQuantity: ${quantity}\nPrice: $${productPrice}`);
 
-    saveToCart(productId, selectedSize, productTitle, productImage, productPrice);
+    saveToCart(productId, selectedSize, productTitle, productImage, productPrice, quantity);
 }
 
 // Function - save products to localStorage
-function saveToCart(productId, selectedSize, productTitle, productImage, productPrice) {
+function saveToCart(productId, selectedSize, productTitle, productImage, productPrice, quantity, onSale) {
     // Retrieve existing cart items from localStorage
     const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
 
     // Add item to the cart
-    cartItems.push({ productId, selectedSize, productTitle, productImage, productPrice });
+    cartItems.push({ productId, selectedSize, productTitle, productImage, productPrice, quantity, onSale }); // Include onSale in the cart item
 
     // Save the cart
     localStorage.setItem('cart', JSON.stringify(cartItems));
@@ -169,6 +176,9 @@ function displayProducts(products) {
             </select>
         `;
 
+        // Quantity input field
+        const quantityInput = `<input class="quantity-input" type="number" id="quantity-${product.id}" value="1" min="1">`;
+
         // Event listener for add to cart Btn
         const addToCartBtn = document.createElement('button');
         addToCartBtn.textContent = 'Add to Cart';
@@ -183,6 +193,7 @@ function displayProducts(products) {
             </a>
             ${priceDisplay}
             ${sizeDropdown}
+            ${quantityInput}
             <br>
         `;
 

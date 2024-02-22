@@ -177,12 +177,33 @@ nav {
     margin: 0; 
 }
 
-.filter-btns {
-    text-align: center;
-    background-color: var(--primary-blue);
-    padding: 10px;
+
+select {
+    padding: 8px 12px; 
+    font-size: 16px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    background-color: #fff; 
+    color: #333;
+    cursor: pointer; 
 }
 
+option {
+    padding: 8px 12px; 
+    font-size: 16px; 
+    background-color: #fff; 
+    color: #333; 
+}
+
+select:hover {
+    border-color: #999; 
+}
+
+
+select:focus {
+    outline: none; 
+    border-color: #666; 
+}
 button {
     padding: 10px 30px;
     margin: 5px;
@@ -238,6 +259,16 @@ button:hover {
     margin-bottom: 5px;
 }
 
+.quantity-input {
+    padding: 8px 12px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #000000;
+    width: 60px;
+    cursor: pointer;
+}
 
 footer {
     background-color: var(--primary-blue);
