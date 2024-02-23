@@ -197,7 +197,7 @@ function displayProducts(products) {
         });
 
         productElement.innerHTML = `
-            <a href="/product/index.html?id=${product.id}">
+            <a href="/rainydays/product/index.html?id=${product.id}">
                 <img src="${product.image}" alt="${product.title}">
                 <h3>${product.title}</h3>
             </a>
