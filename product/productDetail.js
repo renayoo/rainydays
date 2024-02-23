@@ -18,7 +18,7 @@ window.onload = async function() {
     const backBtn = document.getElementById('backBtn');
     if (backBtn) {
         backBtn.addEventListener('click', () => {
-            window.location.href = '/outerwearproducts.html'; // Navigation - back to the products list page
+            window.location.href = 'outerwearproducts.html'; // Navigation - back to the products list page
         });
     }
     
