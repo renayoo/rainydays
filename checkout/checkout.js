@@ -13,6 +13,21 @@ function removeFromCart(productId, selectedSize) {
     updateCartUI();
 }
 
+// Remove one item from the cart
+function removeOneFromCart(productId, selectedSize) {
+    let cartItems = getCartItems();
+    for (let i = 0; i < cartItems.length; i++) {
+        if (cartItems[i].productId === productId && cartItems[i].selectedSize === selectedSize) {
+            if (cartItems[i].quantity > 1) {
+                cartItems[i].quantity--;
+                break;
+            }
+        }
+    }
+    localStorage.setItem('cart', JSON.stringify(cartItems));
+    updateCartUI();
+}
+
 // Clear the cart
 function clearCart() {
     localStorage.removeItem('cart');
@@ -69,8 +84,18 @@ function displayCartItems() {
                         <p>$${price}</p> 
                     </div>
                 </div>
-                <button onclick="removeFromCart('${item.productId}','${item.selectedSize}')">Remove</button>
-            `;
+                <button onclick="removeFromCart('${item.productId}','${item.selectedSize}')">Remove</button>`;
+
+            // If quantity is higher than 1, add a "Remove One" button
+            if (item.quantity > 1) {
+                const removeOneButton = document.createElement('button');
+                removeOneButton.textContent = 'Remove One';
+                removeOneButton.onclick = function() {
+                    removeOneFromCart(item.productId, item.selectedSize);
+                };
+                cartItemElement.appendChild(removeOneButton);
+            }
+
             checkoutProductList.appendChild(cartItemElement);
         });
 
@@ -91,13 +116,10 @@ function updateCartUI() {
 
 function updateCartCounter() {
     const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-    console.log(cartItems);
     const numberOfItemsInCart = cartItems.length;
-    console.log(numberOfItemsInCart);
 
     var counter = document.querySelector(".shopping-cart #counter");
     counter.setAttribute("counter-value", numberOfItemsInCart);
 }
 
 updateCartUI();
-
