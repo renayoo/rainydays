@@ -180,6 +180,10 @@ button:hover {
         display: flex;
     }
     
+    .burger-menu-box {
+        z-index: 1;
+    }
+
     .nav-buttons-main {
         display: none;
     }
