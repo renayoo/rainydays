@@ -91,7 +91,7 @@ async function addToCart() {
     const quantity = parseInt(document.getElementById('quantity').value);
     const productTitle = document.querySelector('h2').textContent;
     const productImage = document.getElementById("productDetailsImage").getAttribute('src');
-    let productPrice = ''; // Initialize productPrice
+    let productPrice = ''; 
 
     // Retrieve product data from the API
     const productId = new URLSearchParams(window.location.search).get('id');
@@ -134,7 +134,7 @@ function saveToCart(productId, selectedSize, quantity, productTitle, productImag
     } 
     else {
         // Add item to the cart
-        cartItems.push({ productId, selectedSize, productTitle, productImage, productPrice, quantity }); // Include onSale in the cart item
+        cartItems.push({ productId, selectedSize, productTitle, productImage, productPrice, quantity }); 
     }
     // Save the updated cart back to localStorage
     localStorage.setItem('cart', JSON.stringify(cartItems));

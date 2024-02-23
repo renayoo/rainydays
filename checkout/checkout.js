@@ -21,7 +21,7 @@ function clearCart() {
 
 // Event listener to the confirm button
 document.getElementById('confirmBtn').addEventListener('click', function() {
-    // Call clearCart function to clear the cart
+    // Clear the cart after clicking confirm order
     clearCart();
 
     // Redirect to the confirmation page
@@ -57,7 +57,7 @@ function displayCartItems() {
                 price = item.productPrice; // Regular price if not on sale
             }
 
-            totalPrice += parseFloat(price) * item.quantity; // Price parsed as float
+            totalPrice += parseFloat(price) * item.quantity;
 
             // HTML (product title, size, image, price, etc.)
             cartItemElement.innerHTML = `
@@ -76,7 +76,7 @@ function displayCartItems() {
 
         // Display the total price 
         const totalPriceElement = document.createElement('div');
-        totalPriceElement.innerHTML = `<p>Total Price: $${totalPrice.toFixed(2)}</p>`; // Ensure total price is formatted with two decimal places
+        totalPriceElement.innerHTML = `<p>Total Price: $${totalPrice.toFixed(2)}</p>`; 
         checkoutProductList.appendChild(totalPriceElement);
 
         // Make confirm checkout Btn work if products added in cart

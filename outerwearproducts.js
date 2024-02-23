@@ -102,7 +102,7 @@ function addToCart(productId) {
     const productElement = document.getElementById(`product-${productId}`);
     const productTitle = productElement.querySelector('h3').textContent;
     const productImage = productElement.querySelector('img').getAttribute('src');
-    let productPrice = ''; // Initialize productPrice
+    let productPrice = ''; 
 
     // Retrieve product data from the API
     const productData = productsData.find(product => product.id === productId);
