@@ -25,7 +25,7 @@ async function initialize() {
 initialize();
 
 
-// Event listener sorting dropdown menu price
+// Event listener - sorting dropdown menu price
 const sortSelect = document.getElementById('sortSelect');
 sortSelect.addEventListener('change', () => {
     const sortOption = sortSelect.value;
@@ -178,7 +178,7 @@ function displayProducts(products) {
             `;
         }
 
-        // Size dropdown selection
+        // Size dropdown menu
         const sizeOptions = product.sizes.map(size => `<option value="${size}">${size}</option>`).join('');
         const sizeDropdown = `
             <select id="size-${product.id}">
@@ -186,10 +186,10 @@ function displayProducts(products) {
             </select>
         `;
 
-        // Quantity input field
+        // Quantity input 
         const quantityInput = `<input class="quantity-input" type="number" id="quantity-${product.id}" value="1" min="1">`;
 
-        // Event listener for add to cart Btn
+        // Event listener - add to cart Btn
         const addToCartBtn = document.createElement('button');
         addToCartBtn.textContent = 'Add to Cart';
         addToCartBtn.addEventListener('click', () => {

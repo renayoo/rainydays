@@ -39,7 +39,7 @@ document.getElementById('confirmBtn').addEventListener('click', function() {
     // Clear the cart after clicking confirm order
     clearCart();
 
-    // Redirect to the confirmation page
+    // Confirmation page
     window.location.href = 'confirmation/index.html';
 });
 
@@ -64,7 +64,7 @@ function displayCartItems() {
             const cartItemElement = document.createElement('div');
             cartItemElement.classList.add('cart-item');
 
-            // Calculate the price, considering if the item is on sale
+            // Calculate the price
             let price;
             if (item.onSale && item.discountedPrice !== undefined) {
                 price = item.discountedPrice; // Use discounted price if available
@@ -114,12 +114,17 @@ function updateCartUI() {
     updateCartCounter();
 }
 
+//Cart counter, including quantity
 function updateCartCounter() {
     const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
-    const numberOfItemsInCart = cartItems.length;
+    let totalQuantity = 0;
 
-    var counter = document.querySelector(".shopping-cart #counter");
-    counter.setAttribute("counter-value", numberOfItemsInCart);
+    cartItems.forEach(item => {
+        totalQuantity += item.quantity;
+    });
+
+    const counter = document.querySelector(".shopping-cart #counter");
+    counter.setAttribute("counter-value", totalQuantity);
 }
 
 updateCartUI();

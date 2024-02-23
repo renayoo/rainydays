@@ -14,7 +14,7 @@ window.onload = async function() {
         // Handle error: Unable to fetch product details
     }
     
-    // Event listener - "Back to Products" button
+    // Event listener - Products page button
     const backBtn = document.getElementById('backBtn');
     if (backBtn) {
         backBtn.addEventListener('click', () => {
@@ -22,7 +22,7 @@ window.onload = async function() {
         });
     }
     
-    // Event listener - "Add to Basket" button
+    // Event listener - Add to cart button
     const addToCartBtn = document.getElementById('addToCart');
     if (addToCartBtn) {
         addToCartBtn.addEventListener('click', addToCart);
@@ -63,7 +63,7 @@ function displayProductDetails(productDetails) {
         sizesDropdown += '</select>';
     }
     
-    // Quantity selector
+    // Quantity input
     const quantitySelector = '<input type="number" id="quantity" value="1" min="1">';
     
     // Product container
