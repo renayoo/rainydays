@@ -139,59 +139,14 @@ nav {
     left: 0;
 }
 
-.product-container {
-    display: flex;
-    background-color: var(--primary-blue);
-    max-width: 100%; 
-    border: 1px solid #ffffff;
+#checkoutProductList {
+    padding: 20px;
 }
 
-.product-image {
-    max-width: 35%;
-}
-.product-details {
-    flex: 1;
-    padding: 30px;
+#checkoutProductList img {
+    width: 300px;
 }
 
-.product-title {
-    font-size: 24px;
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-align: center;
-}
-
-.product-description {
-    font-size: 16px;
-    text-transform: uppercase;
-    color: #f0eded;
-    line-height: 1.6;
-    text-align: left
-}
-.select-size {
-    text-transform: uppercase;
-    color: white;
-    font-size: 20px;
-}
-.select-size-buttons {
-    color: #ffffff;
-    font-size: 20px;
-}
-.add-to-cart {
-    background-color: #5e5e5e;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    margin-top: 50px;
-    text-transform: uppercase;
-}
-.add-to-cart a:hover {
-    background-color: white;
-    color: black
-}
 
 footer {
     background-color: var(--primary-blue);
@@ -200,8 +155,8 @@ footer {
     text-align: center;
     justify-content: space-between;
     font-weight: bold;
-    position: relative;
 }
+
 footer a {
     color: #fff;
     text-decoration: none;
@@ -209,11 +164,10 @@ footer a {
     padding: 5px;
     text-transform: uppercase;
 }
+
 footer a:hover {
     text-decoration: none;
-    background-color: white;
     color: black;
-    padding: 5px;
     text-transform: uppercase;
     height: 100%;
 }
@@ -222,19 +176,44 @@ footer a:hover {
 @media (max-width: 900px) {
     .burger-menu-label {
         display: flex;
+        padding-top: 30px;
     }
 
     .nav-buttons-main {
         display: none;
-    } 
-    .product-container {
+    }
+    .container {
         flex-direction: column;
     }
-    .product-image {
-        max-width: 100%;
+    input[type="text"], input[type="number"], input[type="email"] {
+        width: 500px;
+        padding: 10px;
+        border: 1px solid #000000;
+        border-radius: 5px;
     }
-    .product-details {
-        padding: 10px 20px;
-        background-color: var(--primary-blue);
+
+}
+
+@media (max-width: 520px) {
+    .burger-menu-label {
+        display: flex;
+        padding-top: 30px;
+    }
+
+    .nav-buttons-main {
+        display: none;
+    }
+    .container {
+        flex-direction: column;
+    }
+    input[type="text"], input[type="number"], input[type="email"] {
+        width: 320px;
+        padding: 10px;
+        border: 1px solid #000000;
+        border-radius: 5px;
+    }
+    footer {
+        display: flex;
+        flex-direction: column;
     }
 }

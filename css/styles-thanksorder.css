@@ -35,109 +35,6 @@ header {
     object-fit: contain;
 }
 
-nav {
-    height: 100%;
-}
-.nav-buttons {
-    font-family: Arial, Helvetica, sans-serif;
-    list-style-type: none; 
-    margin: 0;
-    padding: 0;
-    display: flex; 
-    height: 100%;
-    z-index: 1;
-}
-.nav-buttons a {
-    height: 100%;
-    min-width: 150px;
-    text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-weight: bold;
-    color: var(--primary-blue);
-}
-.nav-buttons a:hover {
-    background-color: rgb(199, 199, 199);
-    color: white;
-}
-
-.shopping-cart a {
-    text-decoration: none;
-    font-size: large;
-    color: #000000; 
-    height: 30px;
-}
-.shopping-cart img {
-    max-width: 38px;
-    max-height: 42px;
-    padding: 1px;
-}
-
-.burger-menu-image {
-    height: 50px;
-}
-
-#burger-menu-input {
-    opacity: 0;
-    position: absolute;
-}
-
-.burger-menu-label {
-    display: none; 
-    align-items: center;  
-    height: 100%;
-    cursor: pointer;
-}
-
-
-.burger-menu-button {
-    width: 100%;
-    display: flex;
-    justify-content: end;
-    padding-right : 20px;
-}
-
-.burger-menu-box {
-    display: block;
-    position: fixed;
-    visibility: hidden;
-    top: 0;
-    left: -100%;
-    width: 300px;
-    height: 100%;
-    margin: 0;
-    padding: 20px 0;
-    background-color: #dfdfdf;
-    box-shadow: 0px 0px 100px rgba(0, 0, 0, .6);
-    transition: 0.2s;
-}
-
-.burger-menu-box ul {
-    list-style: none;
-}
-
-.burger-menu-item {
-    display: block;
-    padding: 12px 24px;
-    color: #333;
-    font-family: 'Roboto', sans-serif;
-    font-size: 20px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: background 0.3s;
-}
-
-.burger-menu-item:hover {
-    background-color: #CFD8DC;
-}
-
-#burger-menu-input:checked ~ .burger-menu-box {
-    visibility: visible;
-    left: 0;
-}
 h1 {
     text-align: center;
     text-transform: uppercase;
@@ -154,36 +51,11 @@ h1 {
 }
 .container-thanksorder p {
     color: var(--primary-blue);
+    font-size: 25px;
 }
 .container-thanksorder img {
     max-width: 100px;
     padding: 10px;
-}
-footer {
-    background-color: var(--primary-blue);
-    color: #664040;
-    padding: 20px 0;
-    text-align: center;
-    justify-content: space-between;
-    font-weight: bold;
-    width: 100%;
-}
-
-footer a {
-    color: #fff;
-    text-decoration: none;
-    margin: 0 10px;
-    padding: 5px;
-    text-transform: uppercase;
-}
-
-footer a:hover {
-    text-decoration: none;
-    background-color: white;
-    color: black;
-    padding: 5px;
-    text-transform: uppercase;
-    height: 100%;
 }
 
 
@@ -202,6 +74,10 @@ footer a:hover {
 
     h1 {
         font-size: 18px;
+    }
+    footer {
+        display: flex;
+        flex-direction: column;
     }
 }
 
