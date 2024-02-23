@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Contact page"/>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Contact page" />
     <link href="css/styles-contact.css" rel="stylesheet" />
-    <link rel="icon" href="favicon-32x32.png" type="favicon.rainydays">
+    <link href="/css/styles-navbar-footer.css" rel="stylesheet" />
+    <link rel="icon" href="favicon-32x32.png" type="favicon.rainydays" />
+    <script defer src="cart-counter.js"></script>
     <title>Contact us</title>
   </head>
 
@@ -25,15 +27,19 @@
         <div class="burger-menu-button">
           <label for="burger-menu-input">
             <img
-            class="burger-menu-image"
-            src="https://w7.pngwing.com/pngs/1008/558/png-transparent-computer-icons-button-close-angle-rectangle-logo.png"
-            alt="hamburger menu"
+              class="burger-menu-image"
+              src="https://w7.pngwing.com/pngs/1008/558/png-transparent-computer-icons-button-close-angle-rectangle-logo.png"
+              alt="hamburger menu"
             />
           </label>
         </div>
         <ul>
           <li><a class="burger-menu-item" href="index.html">Home</a></li>
-          <li><a class="burger-menu-item" href="outerwearproducts.html">Products</a></li>
+          <li>
+            <a class="burger-menu-item" href="outerwearproducts.html"
+              >Products</a
+            >
+          </li>
           <li><a class="burger-menu-item" href="aboutus.html">About us</a></li>
           <li><a class="burger-menu-item" href="contactus.html">Contact</a></li>
         </ul>
@@ -54,33 +60,42 @@
         </ul>
       </nav>
       <a class="shopping-cart" href="/checkout/index.html"
-        ><img src="cart.png" alt="cart"
-      /></a>
+        ><img src="cart.png" alt="cart" />
+        <div counter-value="0" id="counter"></div
+      ></a>
     </header>
     <main>
       <div class="contact-form-container">
         <div class="contact-form">
-            <h1>Got a question? Ask us!</h1>
-              <p>We'd love to hear from you. Send us a message and we will respond as soon as possible.</p>
-            <form>
-                <div class="form-group">
-                    <label for="name">Name*:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">E-mail*:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="message">Message*:</label>
-                    <textarea id="message" name="message" rows="4" required></textarea>
-                </div>
-                <div class="form-group-button">
-                    <button type="submit">Send message</button>
-                </div>
-            </form>
+          <h1>Got a question? Ask us!</h1>
+          <p>
+            We'd love to hear from you. Send us a message and we will respond as
+            soon as possible.
+          </p>
+          <form>
+            <div class="form-group">
+              <label for="name">Name*:</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">E-mail*:</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="message">Message*:</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="4"
+                required
+              ></textarea>
+            </div>
+            <div class="form-group-button">
+              <button type="submit">Send message</button>
+            </div>
+          </form>
         </div>
-    </div>
+      </div>
     </main>
     <footer>
       <a href="#faq">FAQ</a>

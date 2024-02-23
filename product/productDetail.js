@@ -71,7 +71,7 @@ function displayProductDetails(productDetails) {
         <h2>${productDetails.title}</h2>
         <!-- Back to Products button -->
         <button id="backBtn">Back to Products</button> 
-        <img src="${productDetails.image}" alt="${productDetails.title}">
+        <img id="productDetailsImage" src="${productDetails.image}" alt="${productDetails.title}">
         <p>${productDetails.description}</p>
         ${priceDisplay}
         <!-- Sizes dropdown -->
@@ -90,7 +90,7 @@ async function addToCart() {
     const selectedSize = sizeSelect ? sizeSelect.value : null;
     const quantity = parseInt(document.getElementById('quantity').value);
     const productTitle = document.querySelector('h2').textContent;
-    const productImage = document.querySelector('img').getAttribute('src');
+    const productImage = document.getElementById("productDetailsImage").getAttribute('src');
     let productPrice = ''; // Initialize productPrice
 
     // Retrieve product data from the API
@@ -128,13 +128,26 @@ function saveToCart(productId, selectedSize, quantity, productTitle, productImag
     // Retrieve existing cart items from localStorage
     const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
 
-    // Add item to the cart
-    cartItems.push({ productId, selectedSize, quantity, productTitle, productImage, productPrice });
-
+    const existingItem = cartItems.find(item => item.productId == productId && item.selectedSize == selectedSize)
+    if(existingItem) {
+        existingItem.quantity += quantity;
+    } 
+    else {
+        // Add item to the cart
+        cartItems.push({ productId, selectedSize, productTitle, productImage, productPrice, quantity }); // Include onSale in the cart item
+    }
     // Save the updated cart back to localStorage
     localStorage.setItem('cart', JSON.stringify(cartItems));
 
+    const numberOfItemsInCart = cartItems.length;
+    updateCartCounter(numberOfItemsInCart);
+
     updateCartUI();
+}
+
+function updateCartCounter(newCount) {
+    var counter = document.querySelector(".shopping-cart #counter");
+    counter.setAttribute("counter-value", newCount);
 }
 
 function getCartItems() {

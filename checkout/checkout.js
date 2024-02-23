@@ -4,9 +4,11 @@ function getCartItems() {
 }
 
 // Remove a product from the cart
-function removeFromCart(productId) {
+function removeFromCart(productId, selectedSize) {
     let cartItems = getCartItems();
-    cartItems = cartItems.filter(item => item.productId !== productId);
+    cartItems = cartItems.filter(item => {
+        return !(item.productId == productId && item.selectedSize == selectedSize)
+    });
     localStorage.setItem('cart', JSON.stringify(cartItems));
     updateCartUI();
 }
@@ -67,7 +69,7 @@ function displayCartItems() {
                         <p>$${price}</p> 
                     </div>
                 </div>
-                <button onclick="removeFromCart('${item.productId}')">Remove</button>
+                <button onclick="removeFromCart('${item.productId}','${item.selectedSize}')">Remove</button>
             `;
             checkoutProductList.appendChild(cartItemElement);
         });
@@ -84,6 +86,17 @@ function displayCartItems() {
 
 function updateCartUI() {
     displayCartItems();
+    updateCartCounter();
+}
+
+function updateCartCounter() {
+    const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+    console.log(cartItems);
+    const numberOfItemsInCart = cartItems.length;
+    console.log(numberOfItemsInCart);
+
+    var counter = document.querySelector(".shopping-cart #counter");
+    counter.setAttribute("counter-value", numberOfItemsInCart);
 }
 
 updateCartUI();

@@ -12,6 +12,7 @@ async function fetchProducts() {
     }
 }
 
+
 async function initialize() {
     try {
         productsData = await fetchProducts();
@@ -127,13 +128,20 @@ function saveToCart(productId, selectedSize, productTitle, productImage, product
     // Retrieve existing cart items from localStorage
     const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
 
+    const existingItem = cartItems.find(item => item.productId == productId && item.selectedSize == selectedSize)
+    if(existingItem) {
+        existingItem.quantity += quantity;
+    } 
+    else {
     // Add item to the cart
-    cartItems.push({ productId, selectedSize, productTitle, productImage, productPrice, quantity, onSale }); // Include onSale in the cart item
+        cartItems.push({ productId, selectedSize, productTitle, productImage, productPrice, quantity, onSale }); // Include onSale in the cart item
+    }
 
     // Save the cart
     localStorage.setItem('cart', JSON.stringify(cartItems));
 
-    updateCartUI();
+    const numberOfItemsInCart = cartItems.length;
+    updateCartCounter(numberOfItemsInCart);
 }
 
 // Function - retrieve cart items from localStorage
@@ -142,11 +150,14 @@ function getCartItems() {
 }
 
 // Function - update the UI to reflect the current cart state
-function updateCartUI() {
+function updateCartCounter(newCount) {
+    var counter = document.querySelector(".shopping-cart #counter");
+    counter.setAttribute("counter-value", newCount);
 }
 
 // Function - display products
 function displayProducts(products) {
+    const productList = document.getElementById("productList");
     productList.innerHTML = ''; 
 
     products.forEach(product => {

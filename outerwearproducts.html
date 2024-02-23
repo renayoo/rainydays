@@ -4,10 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Rainy Days list of products"/>
-    <link href="css/styles-products.css" rel="stylesheet" />
+    <link href="css/styles-outerwearproducts.css" rel="stylesheet" />
+    <link href="/css/styles-navbar-footer.css" rel="stylesheet" />
     <link rel="icon" href="favicon-32x32.png" type="favicon.rainydays">
     <title>Rainy Days Products</title>
-    <script defer src="index.js"></script>
+    <script defer src="outerwearproducts.js"></script>
+    <script defer src="cart-counter.js"></script>
   </head>
 
   <body>
@@ -55,8 +57,9 @@
         </ul>
       </nav>
       <a class="shopping-cart" href="/checkout/index.html"
-        ><img src="cart.png" alt="cart"
-      /></a>
+        ><img src="cart.png" alt="cart" />
+        <div counter-value="0" id="counter"></div
+      ></a>
     </header>
 
     <main>
