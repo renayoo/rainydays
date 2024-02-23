@@ -7,6 +7,10 @@
     box-sizing: border-box;
 }
 
+#burger-menu-input {
+    display: none;
+}
+
 main {
     height: 100%;
 }
@@ -99,6 +103,11 @@ button:hover {
 @media (max-width: 900px) {
     .burger-menu-label {
         display: flex;
+
+    }
+
+    .burger-menu-box {
+        z-index: 1;
     }
 
     .nav-buttons-main {
