@@ -1,3 +1,4 @@
+//Cart counter for products in cart
 function getCartItems() {
     return JSON.parse(localStorage.getItem('cart')) || [];
 }
